@@ -5,7 +5,7 @@ Aplicacion que indexa los tweets(cada cierto tiempo), calcula y guarda las estad
 * Abrir el script sql (tbd_final.sql) que está dentro de la carpeta en MySql Workbench
 * Ejecutar el script y refrescar para verificar si se creó la base de datos "tbd"
 * Cambiar el usuario y contraseña para la coneccion a la base de datos MySql (dentro del proyecto en el archivo "application.properties")
-* Debe estar corriendo estar en ejecución la base de datos mongo, para ello utilziar el siguiente comando en una terminal:
+* Debe estar en ejecución la base de datos mongo, para ello utilziar el siguiente comando en una terminal:
 ```
 > mongod --dbpath "ruta_bd_mongo"
 ```
@@ -18,4 +18,7 @@ Aplicacion que indexa los tweets(cada cierto tiempo), calcula y guarda las estad
 > gradle build
 > gradle bootrun
 ```
-
+*Una alternativa para realizar los tres comandos al mismo tiempo es:
+```
+> gradle clean build bootrun
+```
