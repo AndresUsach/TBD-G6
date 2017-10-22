@@ -26,3 +26,5 @@
 * [Mongo](https://www.mongodb.com/) - Base de datos no relacional.
 * [MySql](https://www.mysql.com/) - Base de datos relacional.
 
+### Nota
+Dentro de cada carpeta se explica como instalar ejecutar cada una de las aplicaciones.
