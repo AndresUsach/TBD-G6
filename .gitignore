@@ -1,0 +1,29 @@
+/twitter-streaming/bin
+/twitter-streaming/build
+/twitter-streaming.classpath
+/twitter-streaming/.gradle
+/twitter-streaming.project
+/twitter-streaming/.settings
+
+
+
+/Backend/bin
+/Backend/build
+/Backend/.classpath
+/Backend/.gradle
+/Backend/.project
+/Backend/.settings
+/Backend/indice
+/Backend/.idea
+
+# Ignore Gradle GUI config
+/Backend/gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+/Backend/!gradle-wrapper.jar
+
+# Cache of project
+/Backend/.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
