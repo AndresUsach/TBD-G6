@@ -18,7 +18,7 @@ Aplicacion que indexa los tweets(cada cierto tiempo), calcula y guarda las estad
 > gradle build
 > gradle bootrun
 ```
-*Una alternativa para realizar los tres comandos al mismo tiempo es:
+* Una alternativa para realizar los tres comandos al mismo tiempo es:
 ```
 > gradle clean build bootrun
 ```
