@@ -1,14 +1,13 @@
-Para compilar
+# Streaming
 
-  gradle jar
-  
-Para ejecutar
+## Para compilar y ejecutar
 
-  java -cp build/libs/twitter-streaming-master-1.0.jar cl.citiaps.twitter.streaming.TwitterStreaming
+```
+> gradle jar
+> java -cp build/libs/twitter-streaming-master-1.0.jar cl.citiaps.twitter.streaming.TwitterStreaming
+```
 
-Es necesario tener instalado MongoDB y Gradle.
-MongoDB debe estar corriendo antes de ejecutar este programa.
-  
- NO OLVIDAR modificar twitter4j.properties para agregar parámetros de autenticación
-
-Para subir al git, usar git push (NO git push origin master)
+## Importante
+* Es necesario tener instalado MongoDB y Gradle.
+* MongoDB debe estar corriendo antes de ejecutar este programa.
+* **NO OLVIDAR** modificar twitter4j.properties para agregar parámetros de autenticación.
