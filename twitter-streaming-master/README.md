@@ -9,5 +9,8 @@
 
 ## Importante
 * Es necesario tener instalado MongoDB y Gradle.
-* MongoDB debe estar corriendo antes de ejecutar este programa.
 * **NO OLVIDAR** modificar twitter4j.properties para agregar parámetros de autenticación.
+* MongoDB debe estar corriendo antes de ejecutar este programa.
+```
+> mongod --dbpath "ruta_bd_mongo"
+```

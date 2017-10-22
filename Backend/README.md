@@ -5,7 +5,7 @@ Aplicacion que indexa los tweets(cada cierto tiempo), calcula y guarda las estad
 * Abrir el script sql (tbd_final.sql) MySql Workbench
 * Ejecutar el script y refrescar para verificar si se creó la base de datos "tbd"
 * Cambiar el usuario y contraseña para la coneccion a la base de datos MySql (dentro del proyecto en el archivo "application.properties")
-* Debe estar en ejecución la base de datos mongo, para ello utilziar el siguiente comando en una terminal:
+* MongoDB debe estar corriendo antes de ejecutar este programa.
 ```
 > mongod --dbpath "ruta_bd_mongo"
 ```
