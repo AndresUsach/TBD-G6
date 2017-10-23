@@ -1,0 +1,45 @@
+<template>
+<div class="chart"></div>
+</template>
+
+<script>
+import * as d3 from 'd3';
+export default{
+  data:function(){
+    return {
+      data : [30, 86, 168, 281, 303, 365]
+
+    }
+  },
+  methods:{
+
+    loadGraph: function(data){
+
+     d3.select(".chart")
+        .selectAll("div")
+        .data(data)
+        .enter()
+        .append("div")
+        .style("width", function(d) { return d + "px"; })
+        .text(function(d) { return d; });
+
+    }
+
+  },
+  mounted:function(){
+
+     this.loadGraph(this.data);
+
+  }
+}
+</script>
+<style>
+.chart div {
+  font: 15px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 5px;
+  margin: 40px;
+  color: white;
+}
+</style>
