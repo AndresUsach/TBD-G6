@@ -1,7 +1,6 @@
 # Streaming
 
-## Para compilar y ejecutar
-
+## Ejecutar
 ```
 > gradle jar
 > java -cp build/libs/twitter-streaming-master-1.0.jar cl.citiaps.twitter.streaming.TwitterStreaming

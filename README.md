@@ -27,4 +27,4 @@
 * [MySql](https://www.mysql.com/) - Base de datos relacional.
 
 ### Nota
-Dentro de cada carpeta se explica como instalar ejecutar cada una de las aplicaciones.
+Dentro de cada carpeta se explica como instalar y ejecutar cada una de las aplicaciones.
