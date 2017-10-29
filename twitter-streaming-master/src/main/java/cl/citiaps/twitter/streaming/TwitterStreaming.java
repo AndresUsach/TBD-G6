@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import MongoDB.MongoConnection;
-import Neo4j.Ejemplo;
+import Neo4j.Neo;
 import Sentiments.SentimentSpanish;
 import org.apache.commons.io.IOUtils;
 
@@ -123,13 +123,15 @@ public class TwitterStreaming
 	{
 		new TwitterStreaming().init();
 
+		/*
 		//Neo4j
-		Ejemplo ejemplo = new Ejemplo();
+		Neo neo = new Neo();
 
-		ejemplo.connect("bolt://localhost", "neo4j", "root");
-		ejemplo.deleteAll();
-		ejemplo.neo();
-		ejemplo.disconnect();
+		neo.connect("bolt://localhost", "neo4j", "root");
+		neo.deleteAll();
+		neo.neo();
+		neo.disconnect();
+		*/
 
 	}
 

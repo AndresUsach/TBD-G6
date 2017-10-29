@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
 @ComponentScan({"edu.usach.tbdgrupo5", "edu.usach.tbdgrupo5.rest"})
