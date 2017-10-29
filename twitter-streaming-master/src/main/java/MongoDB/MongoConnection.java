@@ -1,4 +1,4 @@
-package cl.citiaps.twitter.streaming;
+package MongoDB;
 
 import java.net.UnknownHostException;
 import java.util.Date;
@@ -28,12 +28,13 @@ public class MongoConnection {
 		this.collectionName = collection;
 	}
 	
-	void connect()
+	public void connect()
 	{
 		try 
 		{
 			this.mongoClient = new MongoClient(new MongoClientURI(uriConnection));
-		} catch (UnknownHostException e) 
+		}
+		catch (UnknownHostException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,7 +43,7 @@ public class MongoConnection {
 		this.collection = database.getCollection(this.collectionName);
 	}
 	
-	void saveTweet(String userName, String userLocation, GeoLocation geoLocation, String text, Date date,
+	public void saveTweet(String userName, String userLocation, GeoLocation geoLocation, String text, Date date,
                    int positiveScore, int negativeScore, String result, double positivePercent, double negativePercent)
 	{
 		DBObject tweet = new BasicDBObject("userName", userName)

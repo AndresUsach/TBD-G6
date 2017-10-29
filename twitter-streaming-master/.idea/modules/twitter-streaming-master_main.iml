@@ -13,5 +13,6 @@
     <orderEntry type="library" name="Gradle: org.twitter4j:twitter4j-core:4.0.5" level="project" />
     <orderEntry type="library" name="Gradle: commons-io:commons-io:2.5" level="project" />
     <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:2.12.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.neo4j.driver:neo4j-java-driver:1.2.1" level="project" />
   </component>
 </module>

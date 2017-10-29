@@ -1,11 +1,13 @@
 package cl.citiaps.twitter.streaming;
 
 import java.io.IOException;
-import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.HashSet;
 import java.util.Set;
 
+import MongoDB.MongoConnection;
+import Neo4j.Ejemplo;
+import Sentiments.SentimentSpanish;
 import org.apache.commons.io.IOUtils;
 
 import twitter4j.*;
@@ -120,6 +122,15 @@ public class TwitterStreaming
 	public static void main(String[] args) throws UnknownHostException 
 	{
 		new TwitterStreaming().init();
+
+		//Neo4j
+		Ejemplo ejemplo = new Ejemplo();
+
+		ejemplo.connect("bolt://localhost", "neo4j", "root");
+		ejemplo.deleteAll();
+		ejemplo.neo();
+		ejemplo.disconnect();
+
 	}
 
 }

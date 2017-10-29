@@ -1,4 +1,4 @@
-package cl.citiaps.twitter.streaming;
+package Sentiments;
 
 import java.io.BufferedReader;
 import java.io.File;
