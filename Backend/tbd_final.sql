@@ -178,3 +178,52 @@ UPDATE genero SET comentarios_neutros = comentarios_neutros + NEW.comentarios_ne
 END
 //
 delimiter ;
+
+CREATE TABLE `tbd`.`pais` (
+  `idpais` INT NOT NULL,
+  `nombre` VARCHAR(255) NULL,
+  `comentarios_positivos` INT NULL,
+  `idartista` INT NULL,
+  PRIMARY KEY (`idpais`),
+  INDEX `idartista_idx` (`idartista` ASC),
+  CONSTRAINT `idartista`
+  FOREIGN KEY (`idartista`)
+  REFERENCES `tbd`.`artista` (`idartista`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('1', 'argentina');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('2', 'bolivia');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('3', 'chile');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('4', 'colombia');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('5', 'costaRica');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('6', 'ecuador');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('7', 'guatemala');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('8', 'honduras');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('9', 'mexico');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('10', 'nicaragua');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('11', 'panama');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('12', 'paraguay');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('13', 'peru');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('14', 'salvador');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('15', 'uruguay');
+INSERT INTO `tbd`.`pais` (`idpais`, `nombre`) VALUES ('16', 'venezuela');
+
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='1';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='2';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='3';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='4';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='5';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='6';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='7';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='8';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='9';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='10';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='11';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='12';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='13';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='14';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='15';
+UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='16';
+
+

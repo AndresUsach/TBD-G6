@@ -47,6 +47,11 @@ public class Artista implements Serializable {
 	@JsonIgnore
 	private List<Keyword> keywords;
 
+	//bi-directional many-to-one association to Artista
+	@OneToMany(mappedBy="artista")
+	@JsonIgnore
+	private List<Pais> paises;
+
 	public Artista() {
 	}
 
@@ -122,4 +127,11 @@ public class Artista implements Serializable {
 		this.keywords = keywords;
 	}
 
+	public List<Pais> getPaises() {
+		return paises;
+	}
+
+	public void setPaises(List<Pais> paises) {
+		this.paises = paises;
+	}
 }
