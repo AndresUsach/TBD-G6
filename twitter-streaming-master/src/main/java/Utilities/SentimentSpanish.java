@@ -1,4 +1,4 @@
-package Sentiments;
+package Utilities;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -43,7 +43,6 @@ public class SentimentSpanish
 	
 	public void loadWords()
 	{
-		//System.out.println("\nReading negative and positive words...");
 		BufferedReader negReader = null;
 		BufferedReader posReader = null;
 		try 
@@ -71,7 +70,6 @@ public class SentimentSpanish
 			}
 
 			this.totalWords = negWords.size() + posWords.size();
-			//System.out.println("\nTotal words: " + this.totalWords);
 
 		} 
 		catch (IOException e) 
@@ -95,14 +93,24 @@ public class SentimentSpanish
 	{
 		this.positiveScore = 0;
 		this.negativeScore = 0;
+
+		//System.out.println("Original text: " + input);
+
+		input = TextUtilities.limpiarAcentos(input);
 		input = input.toLowerCase();
 		input = input.trim();
+		input = input.replaceAll("ñ", "n");
+		input = input.replaceAll(",", " ");
+		input = input.replaceAll("  ", " ");
+		input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
+
+		//System.out.println("Modified text: " + input);
 
 		String[] words = input.split(" ");
 
 		for (int i = 0; i < words.length; i++) {
 			if (posWords.contains(words[i])) {
-				//System.out.println("Positva: " + words[i]);
+				//System.out.println("Positiva: " + words[i]);
 				this.positiveScore++;
 			}
 			if (negWords.contains(words[i])) {

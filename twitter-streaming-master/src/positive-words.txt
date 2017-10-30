@@ -287,3 +287,7 @@ ganador
 divino
 divina
 posta
+obsesionada
+obsesionado
+obsesionadas
+obsesionados

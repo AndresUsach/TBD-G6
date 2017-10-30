@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import MongoDB.MongoConnection;
-import Neo4j.Neo;
-import Sentiments.SentimentSpanish;
+import Utilities.CountryLocator;
+import Utilities.SentimentSpanish;
 import org.apache.commons.io.IOUtils;
 
 import twitter4j.*;
@@ -26,6 +26,8 @@ public class TwitterStreaming
 	
 	private SentimentSpanish sentimentSpanish;
 
+	private CountryLocator countryLocator;
+
 	private TwitterStreaming() 
 	{
 		this.twitterStream = new TwitterStreamFactory().getInstance();
@@ -37,6 +39,10 @@ public class TwitterStreaming
 		
 		this.sentimentSpanish = SentimentSpanish.getInstance();
 		this.sentimentSpanish.loadWords();
+
+        this.countryLocator = CountryLocator.getInstance();
+        this.countryLocator.loadCountries();
+        this.countryLocator.loadCitiesByCountry();
 	}
 
 	private void loadKeywords() 
@@ -86,13 +92,13 @@ public class TwitterStreaming
 			@Override
 			public void onStatus(Status status) 
 			{
-
 				//Almacena solo tweets en español
 				if(status.getLang().equalsIgnoreCase("es"))
 				{
 					System.out.println(">Tweet recibido");
 					//Realiza análisis de sentimientos
 					sentimentSpanish.analyze(status.getText());
+					countryLocator.locateCountry(status.getUser().getLocation());
 
 					//Guarda en MongoDB
 					mongoConnection.saveTweet(
@@ -105,7 +111,8 @@ public class TwitterStreaming
 							sentimentSpanish.getNegativeScore(),
 							sentimentSpanish.getAnalysis(),
 							sentimentSpanish.getPositivePercent(),
-							sentimentSpanish.getNegativePercent()
+							sentimentSpanish.getNegativePercent(),
+                            countryLocator.getFinalCountry()
 					);
 				}
 			}
