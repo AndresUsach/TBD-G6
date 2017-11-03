@@ -41,6 +41,8 @@ public class Lucene {
 	private int positiveResult=0;
 	private int negativeResult=0;
 	private int neutralResult=0;
+	private int commentsCountry=0;
+	private List<String> countryList = null;
 	public Lucene(MongoConnection mongoConnection){
 		this.mongoConnection = mongoConnection;
 	}
@@ -63,6 +65,8 @@ public class Lucene {
 			      doc.add(new StringField("id",cur.get("_id").toString(),Field.Store.YES));
 			      doc.add(new TextField("contenido", cur.get("text").toString(),Field.Store.YES));
 			      doc.add(new StringField("analysis",cur.get("analysis").toString(),Field.Store.YES));
+			      doc.add(new StringField("finalCountry",cur.get("finalCountry").toString(),Field.Store.YES));
+			      //System.out.println("pais del comentario indexando :"+ cur.get("finalCountry"));
 			      if (writer.getConfig().getOpenMode() == OpenMode.CREATE){
 						//System.out.println("Indexando el tweet: "+cur.get("text")+"\n");
 						writer.addDocument(doc);
@@ -94,12 +98,15 @@ public class Lucene {
 			QueryParser parser = new QueryParser("contenido",analyzer);
 			Query query = parser.parse(Artista);
 			idList = new ArrayList<String>();
+			countryList = new ArrayList<String>();
 			TopDocs result = searcher.search(query,25000);
 			ScoreDoc[] hits =result.scoreDocs;
 			
 			for (int i=0; i<hits.length;i++){
 				Document doc = searcher.doc(hits[i].doc);
 				idList.add(doc.get("id"));
+				countryList.add(doc.get("finalCountry"));
+				//System.out.println("pais del comentario indexando :"+ doc.get("finalCountry"));
 				if((doc.get("analysis")).equals("Positive")){
 					this.positiveResult++;
 				}
@@ -117,7 +124,6 @@ public class Lucene {
 			
 			
 		}
-		
 		catch(IOException ex){
 			Logger.getLogger(Lucene.class.getName()).log(Level.SEVERE,null,ex);
 			
@@ -127,6 +133,16 @@ public class Lucene {
 		}
 		return 0;
 	}
+	public void countryCommentsCount(String artista, String Country){
+		int comments= this.countryList.size();
+		this.commentsCountry=0;
+		for(int i=0;i<comments;i++){
+			if(Country.equals(this.countryList.get(i))){
+				this.commentsCountry++;
+			}
+		}
+	}
+	
 	public List<String> getIdList(){
 		return this.idList;
 	}
@@ -139,5 +155,11 @@ public class Lucene {
 	public int getneutralResult(){
 		return this.neutralResult;
 	}
+	public List<String> getCountryList(){
+		return this.countryList;
+	}
 
+	public int getCommentsCountry() {
+		return commentsCountry;
+	}
 }
