@@ -23,6 +23,21 @@ public class TbdGrupo5Application {
 		lucene.indexCreate();
 		lucene.indexSearch("yandel");
 		System.out.println(lucene.getIdList());*/
+
+		/*
+		Neo4j neo = new Neo4j();
+		neo.connect("bolt://localhost", "neo4j", "root");
+		neo.deleteAll();
+		neo.crearEjemplo();
+		//neo.getPersonNodes();
+		//neo.getGameNodes();
+		//neo.getPlaysRel();
+		neo.getNodes();
+		neo.getPlaysRelSingleList();
+		neo.disconnect();
+		*/
+
+
 		SpringApplication.run(TbdGrupo5Application.class, args);
 	}
 	
