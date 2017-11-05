@@ -45,7 +45,7 @@ public class MongoConnection {
 	
 	public void saveTweet(String userName, String userLocation, GeoLocation geoLocation, String text, Date date,
                    int positiveScore, int negativeScore, String result, double positivePercent, double negativePercent,
-						  String finalCountry, long userId, String finalArtist)
+						  String finalCountry, long userId, String finalArtist,int followers,int followees)
 	{
 		DBObject tweet = new BasicDBObject("userName", userName)
 				.append("userLocation", userLocation)
@@ -59,7 +59,9 @@ public class MongoConnection {
                 .append("negativePercent", negativePercent)
 				.append("finalCountry", finalCountry)
 				.append("userId", userId)
-				.append("finalArtist", finalArtist);
+				.append("finalArtist", finalArtist)
+				.append("followers", followers)
+				.append("followees", followees);
 		
 		this.collection.insert(tweet);
 	}

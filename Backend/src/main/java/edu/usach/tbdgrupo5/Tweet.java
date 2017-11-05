@@ -4,6 +4,7 @@ public class Tweet {
 	private String userName;
 	private String text;
 	private int followers;
+	private int followees;
 	private int favourites;
 	private int retweets;
 	
@@ -40,6 +41,14 @@ public class Tweet {
 	}
 	public void setRetweets(int retweets) {
 		this.retweets = retweets;
+	}
+
+	public int getFollowees() {
+		return followees;
+	}
+
+	public void setFollowees(int followees) {
+		this.followees = followees;
 	}
 	
 	

@@ -25,6 +25,7 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
+import org.apache.lucene.index.IndexableField;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
@@ -77,6 +78,8 @@ public class Lucene {
 			      doc.add(new StringField("analysis",cur.get("analysis").toString(),Field.Store.YES));
 			      doc.add(new StringField("finalCountry",cur.get("finalCountry").toString(),Field.Store.YES));
 			      doc.add(new StringField("userName",cur.get("userName").toString(),Field.Store.YES));
+			      doc.add(new StringField("followers",cur.get("followers").toString(),Field.Store.YES));			      
+			      doc.add(new StringField("followees",cur.get("followees").toString(),Field.Store.YES));
 			      
 			      //System.out.println("pais del comentario indexando :"+ cur.get("finalCountry"));
 			      if (writer.getConfig().getOpenMode() == OpenMode.CREATE){
@@ -177,6 +180,8 @@ public class Lucene {
 				Tweet tweet = new Tweet();
 				tweet.setUserName(doc.get("userName"));
 				tweet.setText(doc.get("text"));
+				tweet.setFollowers(Integer.parseInt(doc.get("followers")));
+				tweet.setFollowees(Integer.parseInt(doc.get("followees")));
 				this.resultList.add(tweet);
 				tweet = null;
 			}

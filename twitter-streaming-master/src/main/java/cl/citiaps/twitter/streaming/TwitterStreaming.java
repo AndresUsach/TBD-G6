@@ -127,7 +127,9 @@ public class TwitterStreaming
 							sentimentSpanish.getNegativePercent(),
                             countryLocator.getFinalCountry(),
 							status.getUser().getId(),
-							artistFinder.getFinalArtist()
+							artistFinder.getFinalArtist(),
+							status.getUser().getFollowersCount(),
+							status.getUser().getFriendsCount()
 					);
 				}
 			}
