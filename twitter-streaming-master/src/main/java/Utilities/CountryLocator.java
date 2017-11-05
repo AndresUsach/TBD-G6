@@ -253,7 +253,7 @@ public class CountryLocator
         //Si la ubicación del usuario no es null, se busca si pertenece a un país
         if(input != null)
         {
-            System.out.println("Original location: " + input);
+            //System.out.println("Original location: " + input);
 
             input = TextUtilities.limpiarAcentos(input);
             input = input.toLowerCase();
@@ -263,7 +263,7 @@ public class CountryLocator
             input = input.replaceAll("  ", " ");
             input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
 
-            System.out.println("Modified location: " + input);
+            //System.out.println("Modified location: " + input);
 
             words = input.split(" ");
 
@@ -412,7 +412,7 @@ public class CountryLocator
             }
         }
 
-        System.out.println("Located country: " + this.finalCountry);
+        //System.out.println(">Located country: " + this.finalCountry);
     }
 
     public String getFinalCountry() {

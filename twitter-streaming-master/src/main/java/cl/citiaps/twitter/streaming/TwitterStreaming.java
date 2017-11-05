@@ -109,7 +109,7 @@ public class TwitterStreaming
 
 					//Guarda en MongoDB
 					mongoConnection.saveTweet(
-							status.getUser().getName(),
+							status.getUser().getScreenName(),
 							status.getUser().getLocation(),
 							status.getGeoLocation(),
 							status.getText(),

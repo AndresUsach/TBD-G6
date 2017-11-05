@@ -85,7 +85,7 @@ public class ArtistFinder
         input = input.replaceAll("  ", " ");
         input = input.replaceAll("[^a-zA-Z0-9\\s]", "");
 
-        System.out.println("> Modified text: " + input);
+        //System.out.println("> Modified text: " + input);
 
         String[] words = input.split(" ");
 
@@ -101,7 +101,7 @@ public class ArtistFinder
 
         }
 
-        System.out.println("> Artista: " + this.finalArtist);
+        //System.out.println("> Artista: " + this.finalArtist);
 
     }
 
