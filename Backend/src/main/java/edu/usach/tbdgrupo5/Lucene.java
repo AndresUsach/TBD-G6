@@ -44,7 +44,7 @@ import com.mongodb.DBObject;
 public class Lucene {
 	private MongoConnection mongoConnection;
 	//private List<String> idList = null;
-	private List<List<String>> resultList = null;
+	private List<Tweet> resultList = null;
 	private int positiveResult=0;
 	private int negativeResult=0;
 	private int neutralResult=0;
@@ -77,6 +77,7 @@ public class Lucene {
 			      doc.add(new StringField("analysis",cur.get("analysis").toString(),Field.Store.YES));
 			      doc.add(new StringField("finalCountry",cur.get("finalCountry").toString(),Field.Store.YES));
 			      doc.add(new StringField("userName",cur.get("userName").toString(),Field.Store.YES));
+			      
 			      //System.out.println("pais del comentario indexando :"+ cur.get("finalCountry"));
 			      if (writer.getConfig().getOpenMode() == OpenMode.CREATE){
 						//System.out.println("Indexando el tweet: "+cur.get("text")+"\n");
@@ -106,22 +107,17 @@ public class Lucene {
 			this.positiveResult=0;
 			this.negativeResult=0;
 			this.neutralResult=0;
-			this.resultList = new ArrayList<List<String>>();
 			QueryParser parser = new QueryParser("text",analyzer);
 			Query query = parser.parse(Artista);
-			
 			countryList = new ArrayList<String>();
 			TopDocs result = searcher.search(query,25000);
 			ScoreDoc[] hits =result.scoreDocs;
 			//System.out.println("cantidad tweets:"+hits.length);
 			for (int i=0; i<hits.length;i++){
 				Document doc = searcher.doc(hits[i].doc);
-				List<String> item = new ArrayList<String>();
 				//System.out.println(doc.get("userName"));
-				item.add(doc.get("userName"));
-				item.add(doc.get("text"));
-				this.resultList.add(item);
-
+				
+				
 				//System.out.println("pais del comentario indexando :"+ doc.get("finalCountry"));
 				if((doc.get("analysis")).equals("Positive")){
 					this.countryList.add(doc.get("finalCountry"));
@@ -161,14 +157,14 @@ public class Lucene {
 		}
 	}
 
-	public List<List<String>> getListaUsuarioTweet(String Artista)
+	public List<Tweet> getTweets(String Artista)
 	{
-		List<List<String>> resultList = null;
+		this.resultList = null ;
 		try{
 			IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get("indice/")));
 			IndexSearcher searcher = new IndexSearcher(reader);
 			Analyzer analyzer = new StandardAnalyzer();
-			resultList = new ArrayList<List<String>>();
+			this.resultList = new ArrayList<Tweet>();
 			QueryParser parser = new QueryParser("text",analyzer);
 			Query query = parser.parse(Artista);
 
@@ -178,11 +174,11 @@ public class Lucene {
 			for (int i=0; i<hits.length;i++)
 			{
 				Document doc = searcher.doc(hits[i].doc);
-				List<String> item = new ArrayList<String>();
-				//System.out.println(doc.get("userName"));
-				item.add(doc.get("userName"));
-				item.add(doc.get("text"));
-				resultList.add(item);
+				Tweet tweet = new Tweet();
+				tweet.setUserName(doc.get("userName"));
+				tweet.setText(doc.get("text"));
+				this.resultList.add(tweet);
+				tweet = null;
 			}
 			reader.close();
 		}
@@ -195,10 +191,10 @@ public class Lucene {
 		{
 			Logger.getLogger(Lucene.class.getName()).log(Level.SEVERE,null,ex);
 		}
-		return resultList;
+		return this.resultList;
 	}
 	
-	public List<List<String>> getResultList(){
+	public List<Tweet> getResultList(){
 		return this.resultList;
 	}
 	public int getpositiveResult(){

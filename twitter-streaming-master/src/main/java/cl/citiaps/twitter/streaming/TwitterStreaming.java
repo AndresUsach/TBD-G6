@@ -106,7 +106,13 @@ public class TwitterStreaming
 					sentimentSpanish.analyze(status.getText());
 					countryLocator.locateCountry(status.getUser().getLocation());
 					artistFinder.findArtist(status.getText());
-
+					System.out.println("Likes:" + status.getUser().getFavouritesCount());
+					//System.out.println("Retweets:" + status.getRetweetCount());
+					System.out.println("Seguidores: " + status.getUser().getFollowersCount());
+					System.out.println("Seguidos: " + status.getUser().getFriendsCount());
+					
+					//getId()
+					
 					//Guarda en MongoDB
 					mongoConnection.saveTweet(
 							status.getUser().getScreenName(),
