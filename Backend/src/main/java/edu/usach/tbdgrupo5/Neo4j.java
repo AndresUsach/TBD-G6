@@ -280,17 +280,25 @@ public class Neo4j
 
             for(int i=0;i<lista.size();i++)
             {
-                //System.out.println("> Tweet #" + j + ": " + lista.get(i).get(j));
+                //Filtrar por seguidores
+                if(lista.get(i).getFollowers() > 104 && lista.get(i).getFollowers()<10000)
+                {
+                    //System.out.println("> Tweet #" + j + ": " + lista.get(i).get(j));
 
-                //Reemplaza caracter de escape ' por "
-                String tweetModified = lista.get(i).getText().replaceAll("'", "\"");
+                    //Reemplaza caracter de escape ' por "
+                    String tweetModified = lista.get(i).getText().replaceAll("'", "\"");
 
-                //System.out.println("> TweetModificado #" + j + ": " + tweetModified);
+                    String followerRank = Double.toString(lista.get(i).getFollowerRank());
 
-                String query = "match (a:Usuario) where a.name='" + lista.get(i).getUserName() + "' "
-                        + "  match (b:Artista) where b.name='" + recordArtista.get("name").asString() + "' "
-                        + "  create (a)-[r:Tweet {texto:'" + tweetModified + "'}]->(b)";
-                session.run(query);
+                    //System.out.println("> TweetModificado #" + j + ": " + tweetModified);
+
+                    String query = "match (a:Usuario) where a.name='" + lista.get(i).getUserName() + "' "
+                            + "  match (b:Artista) where b.name='" + recordArtista.get("name").asString() + "' "
+                            + "  create (a)-[r:Tweet {texto:'" + tweetModified + "'" + ", followerRank:'" + followerRank + "'}]->(b)";
+                    session.run(query);
+
+                }
+
             }
         }
     }
@@ -300,11 +308,11 @@ public class Neo4j
         int x = 0;
 
         //Label Usuario 4
-        StatementResult nodes = session.run("MATCH (a:Usuario)-[r]->(b) return a.name as name, r.texto as texto");
+        StatementResult nodes = session.run("MATCH (a:Usuario)-[r]->(b) return a.name as name, r.texto as texto, r.followerRank as followerRank");
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", 1));
+            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
             x++;
         }
 
@@ -347,12 +355,6 @@ public class Neo4j
 
             listaRelTweet.add(mapDouble("source", uIndex, "target", aIndex));
         }
-        /*
-        for(int i = 0; i<playsRel.size(); i++)
-        {
-            System.out.println("> Plays = source: " + playsRel.get(i).get("source") + ", target: " + playsRel.get(i).get("target"));
-        }
-        */
     }
 
     public void crearGrafo() throws SQLException {
