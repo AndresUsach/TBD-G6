@@ -276,33 +276,23 @@ public class Neo4j
         {
             //Para cada artista
             Record recordArtista = artistas.next();
-            List<List<String>> lista = lucene.getListaUsuarioTweet(recordArtista.get("name").asString());
+            List<Tweet> lista = lucene.getTweets(recordArtista.get("name").asString());
 
             for(int i=0;i<lista.size();i++)
             {
-                //System.out.println("> Usuario: " + lista.get(i).get(0) + " sobre artista: " + recordArtista.get("name").asString());
-                for (int j=0;j<lista.get(i).size();j++)
-                {
+                //System.out.println("> Tweet #" + j + ": " + lista.get(i).get(j));
 
-                    if(j> 0)
-                    {
-                        //System.out.println("> Tweet #" + j + ": " + lista.get(i).get(j));
+                //Reemplaza caracter de escape ' por "
+                String tweetModified = lista.get(i).getText().replaceAll("'", "\"");
 
-                        //Reemplaza caracter de escape ' por "
-                        String tweetModified = lista.get(i).get(j).replaceAll("'", "\"");
+                //System.out.println("> TweetModificado #" + j + ": " + tweetModified);
 
-                        //System.out.println("> TweetModificado #" + j + ": " + tweetModified);
-
-                        String query = "match (a:Usuario) where a.name='" + lista.get(i).get(0) + "' "
-                                + "  match (b:Artista) where b.name='" + recordArtista.get("name").asString() + "' "
-                                + "  create (a)-[r:Tweet {texto:'" + tweetModified + "'}]->(b)";
-                        session.run(query);
-                    }
-                }
-                //System.out.println("\n");
+                String query = "match (a:Usuario) where a.name='" + lista.get(i).getUserName() + "' "
+                        + "  match (b:Artista) where b.name='" + recordArtista.get("name").asString() + "' "
+                        + "  create (a)-[r:Tweet {texto:'" + tweetModified + "'}]->(b)";
+                session.run(query);
             }
         }
-
     }
 
     public void getNodosUsuarioArtista()
@@ -314,7 +304,7 @@ public class Neo4j
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", x));
+            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", 1));
             x++;
         }
 
@@ -323,7 +313,7 @@ public class Neo4j
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x,"userName", record.get("name").asString(), "tweet", "nothing" ,"weight", x));
+            listaNodos.add(mapQuadruple("id", x,"userName", record.get("name").asString(), "tweet", "nothing" ,"weight", 2));
             x++;
         }
     }
