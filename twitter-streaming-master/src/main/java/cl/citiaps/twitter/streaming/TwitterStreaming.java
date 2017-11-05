@@ -110,8 +110,9 @@ public class TwitterStreaming
 					//System.out.println("Retweets:" + status.getRetweetCount());
 					System.out.println("Seguidores: " + status.getUser().getFollowersCount());
 					System.out.println("Seguidos: " + status.getUser().getFriendsCount());
+					System.out.println("id: " + status.getId());
 					
-					//getId()
+
 					
 					//Guarda en MongoDB
 					mongoConnection.saveTweet(
