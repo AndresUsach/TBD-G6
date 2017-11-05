@@ -17,8 +17,10 @@ public class TbdGrupo5Application {
 	
 	
 	public static void main(String[] args) {
-		/*MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
+		/*System.out.println("Empezar\n");
+		MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
 		mc.connect();
+		mc.mapReduce();
 		Lucene lucene = new Lucene(mc);
 		lucene.indexCreate();
 		lucene.indexSearch("yandel");

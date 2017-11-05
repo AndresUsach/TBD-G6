@@ -1,11 +1,15 @@
-package edu.usach.tbdgrupo5;
+	package edu.usach.tbdgrupo5;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.MapReduceCommand;
+import com.mongodb.MapReduceOutput;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
@@ -51,6 +55,21 @@ public class MongoConnection {
 		} finally {
 		   cursor.close();
 		}
+	}
+	
+	public List<String> getUserNames(){
+		String map ="function(){emit(this.userName,1);}";
+	    String reduce = "function(userName,valores){return Array.sum(valores);}";
+	    MapReduceCommand cmd = new MapReduceCommand(this.collection, map, reduce,
+	    		null, MapReduceCommand.OutputType.INLINE, null);
+	    
+	    MapReduceOutput out = this.collection.mapReduce(cmd);
+	    List<String> result = new ArrayList<String>();
+	    for (DBObject o : out.results()) {
+	    	result.add( o.get("_id").toString());
+	        //System.out.println(o.get("_id"));
+	    }
+	    return result;
 	}
 	public DBCursor getTweets(){
 		DBCursor cursor = this.collection.find();

@@ -71,4 +71,12 @@ public class ScheduledTasks
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
         //System.out.println("hola fuí programado\n");
     }
+    @Scheduled(cron="*/10 * * * * *")
+    public void mapreduce()
+	{
+    	//System.out.println("Empezar\n");
+		MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
+		mc.connect();
+		System.out.println(mc.getUserNames());
+	}
 }
