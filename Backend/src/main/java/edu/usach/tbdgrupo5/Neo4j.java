@@ -1,15 +1,11 @@
 package edu.usach.tbdgrupo5;
 
-import edu.usach.tbdgrupo5.entities.Artista;
-import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import org.neo4j.driver.v1.AuthTokens;
 import org.neo4j.driver.v1.Driver;
 import org.neo4j.driver.v1.GraphDatabase;
 import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
 
 import java.sql.*;
@@ -308,20 +304,20 @@ public class Neo4j
         int x = 0;
 
         //Label Usuario 4
-        StatementResult nodes = session.run("MATCH (a:Usuario)-[r]->(b) return a.name as name, r.texto as texto, r.followerRank as followerRank");
+        StatementResult nodes = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 100");
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
+            listaNodos.add(mapQuadruple("id", x, "userName", record.get("usuario").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
             x++;
         }
 
         //Label Artista 4
-        nodes = session.run("MATCH (a:Artista) return a.name as name");
+        nodes = session.run("MATCH (a:Artista) return a.name as artista");
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x,"userName", record.get("name").asString(), "tweet", "nothing" ,"weight", 2));
+            listaNodos.add(mapQuadruple("id", x,"userName", record.get("artista").asString(), "tweet", "nothing" ,"weight", 2));
             x++;
         }
     }
@@ -330,7 +326,8 @@ public class Neo4j
     {
         int uIndex = -1;
         int aIndex = -1;
-        StatementResult rel = session.run("MATCH (a:Usuario)-[r:Tweet]->(b:Artista) RETURN a.name as usuario, r, b.name as artista");
+        //StatementResult rel = session.run("MATCH (a:Usuario)-[r:Tweet]->(b:Artista) RETURN a.name as usuario, r, b.name as artista");
+        StatementResult rel = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 100");
         while(rel.hasNext())
         {
             Record record = rel.next();
@@ -340,6 +337,7 @@ public class Neo4j
                 if(listaNodos.get(i).get("userName").equals(record.get("usuario").asString()))
                 {
                     uIndex = i;
+
                     for(int j = 0; j< listaNodos.size(); j++)
                     {
                         //System.out.println("> userName: " + listaNodos.get(j).get("userName") + " artista: " + record.get("artista").asString());
