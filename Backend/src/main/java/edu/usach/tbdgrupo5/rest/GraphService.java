@@ -30,4 +30,26 @@ public class GraphService {
         neo.disconnect();
         return this.graphFormat;
     }
+
+    /*
+    @RequestMapping( value = "/prueba" ,method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> graphPrueba() {
+        neo = new Neo4j();
+        neo.connect("bolt://localhost", "neo4j", "root");
+
+        neo.deleteAll();
+
+        //neo.crearEjemplo();
+
+        neo.getNodeList();
+        neo.getTweetRel();
+
+        this.graphFormat = neo.hacerGrafo();
+
+        neo.disconnect();
+        return this.graphFormat;
+    }
+    */
+
 }

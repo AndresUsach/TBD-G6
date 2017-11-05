@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import MongoDB.MongoConnection;
+import Utilities.ArtistFinder;
 import Utilities.CountryLocator;
 import Utilities.SentimentSpanish;
 import org.apache.commons.io.IOUtils;
@@ -28,6 +29,8 @@ public class TwitterStreaming
 
 	private CountryLocator countryLocator;
 
+	private ArtistFinder artistFinder;
+
 	private TwitterStreaming() 
 	{
 		this.twitterStream = new TwitterStreamFactory().getInstance();
@@ -43,6 +46,9 @@ public class TwitterStreaming
         this.countryLocator = CountryLocator.getInstance();
         this.countryLocator.loadCountries();
         this.countryLocator.loadCitiesByCountry();
+
+        this.artistFinder = ArtistFinder.getInstance();
+        this.artistFinder.loadArtists();
 	}
 
 	private void loadKeywords() 
@@ -99,6 +105,7 @@ public class TwitterStreaming
 					//Realiza análisis de sentimientos
 					sentimentSpanish.analyze(status.getText());
 					countryLocator.locateCountry(status.getUser().getLocation());
+					artistFinder.findArtist(status.getText());
 
 					//Guarda en MongoDB
 					mongoConnection.saveTweet(
@@ -112,7 +119,9 @@ public class TwitterStreaming
 							sentimentSpanish.getAnalysis(),
 							sentimentSpanish.getPositivePercent(),
 							sentimentSpanish.getNegativePercent(),
-                            countryLocator.getFinalCountry()
+                            countryLocator.getFinalCountry(),
+							status.getUser().getId(),
+							artistFinder.getFinalArtist()
 					);
 				}
 			}
