@@ -50,9 +50,20 @@ public class Tweet {
 	public void setFollowees(int followees) {
 		this.followees = followees;
 	}
-	
-	
-	
+
+	public double getPopularity()
+	{
+		double potencia = Math.pow(Math.E, -1.0 * (double)this.getFollowers());
+		System.out.println("> Potencia: " + potencia);
+		double resultado = 1.0 - potencia ;
+		System.out.println("> Resultado: " + resultado);
+		return resultado;
+	}
+
+	public double getFollowerRank()
+	{
+		return (double)this.getFollowers() / ( (double)this.getFollowers() + (double)this.getFollowees() );
+	}
 	
 	
 }
