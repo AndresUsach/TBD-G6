@@ -37,7 +37,7 @@ import com.mongodb.DBObject;
 
 public class Lucene {
 	private MongoConnection mongoConnection;
-	private List<String> idList = null;
+	//private List<String> idList = null;
 	private int positiveResult=0;
 	private int negativeResult=0;
 	private int neutralResult=0;
@@ -97,17 +97,19 @@ public class Lucene {
 			this.neutralResult=0;
 			QueryParser parser = new QueryParser("contenido",analyzer);
 			Query query = parser.parse(Artista);
-			idList = new ArrayList<String>();
+			//idList = new ArrayList<String>();
 			countryList = new ArrayList<String>();
 			TopDocs result = searcher.search(query,25000);
 			ScoreDoc[] hits =result.scoreDocs;
-			
+			//System.out.println("cantidad tweets:"+hits.length);
 			for (int i=0; i<hits.length;i++){
 				Document doc = searcher.doc(hits[i].doc);
-				idList.add(doc.get("id"));
-				countryList.add(doc.get("finalCountry"));
+				//idList.add(doc.get("id"));
+
 				//System.out.println("pais del comentario indexando :"+ doc.get("finalCountry"));
 				if((doc.get("analysis")).equals("Positive")){
+					this.countryList.add(doc.get("finalCountry"));
+					//System.out.println(doc.get("finalCountry")+"\n");
 					this.positiveResult++;
 				}
 				else if((doc.get("analysis")).equals("Negative")){
@@ -133,19 +135,19 @@ public class Lucene {
 		}
 		return 0;
 	}
-	public void countryCommentsCount(String artista, String Country){
+	public void countryCommentsCount(String artista, String country){
 		int comments= this.countryList.size();
 		this.commentsCountry=0;
 		for(int i=0;i<comments;i++){
-			if(Country.equals(this.countryList.get(i))){
+			if(country.equals(this.countryList.get(i))){
 				this.commentsCountry++;
 			}
 		}
 	}
 	
-	public List<String> getIdList(){
+	/*public List<String> getIdList(){
 		return this.idList;
-	}
+	}*/
 	public int getpositiveResult(){
 		return this.positiveResult;
 	}

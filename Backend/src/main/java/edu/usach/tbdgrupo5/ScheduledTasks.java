@@ -36,32 +36,37 @@ public class ScheduledTasks
 	{
     	
     	artistas= artistarepository.findAll();
-    	countryList= paisrepository.findAll();
+    	
     	System.out.println("[Scheduled Task][Start]: Update comments.");
     	for (Artista artista:artistas)
     	{
-    		System.out.println("entre a artista :D ");
+    		countryList= paisrepository.findAll();
+    		//System.out.println("entre a artista :D ");
     		lucene.indexSearch(artista.getNombre());
-    		System.out.println("Artista:"+ artista.getNombre());
+    		/*System.out.println("Artista:"+ artista.getNombre());
     		System.out.println("Positivos: "+ lucene.getpositiveResult());
     		System.out.println("Negativos: "+ lucene.getnegativeResult());
-    		System.out.println("Neutral: "+ lucene.getneutralResult());
+    		System.out.println("Neutral: "+ lucene.getneutralResult());*/
     	    artista.setComentariosPositivos(lucene.getpositiveResult());
     	    artista.setComentariosNegativos(lucene.getnegativeResult());
 			artista.setComentariosNeutros(lucene.getneutralResult());
 			
 			for(Pais countryArtista:countryList){
-				System.out.println("pais :"+countryArtista.getNombre());
+				//System.out.println("pais :"+countryArtista.getNombre());
 				lucene.countryCommentsCount(artista.getNombre(), countryArtista.getNombre());
-				System.out.println("comentarios del pais: "+lucene.getCommentsCountry());
-				//no se como indexar otros artistas @.@ a su comentario especifico
-				countryArtista.setArtista(artista);
-				countryArtista.setComentariosPositivos(lucene.getCommentsCountry());
-				//countryArtista.setComentariosPositivos(countryArtista.getComentariosPositivos()+lucene.getCommentsCountry());
-				paisrepository.save(countryArtista);
+				//System.out.println("comentarios del pais: "+lucene.getCommentsCountry());
+				if(countryArtista.getComentariosPositivos() < lucene.getCommentsCountry()){
+					countryArtista.setArtista(artista);
+					countryArtista.setComentariosPositivos(lucene.getCommentsCountry());
+					paisrepository.save(countryArtista);
+				}
+				//countryArtista.setComentariosPositivos(countryArtista.getComentariosPositivos()+lucene.getCommentsCountry());	
 			}
-			
+			/*System.out.println("pais :"+"unknown");
+			lucene.countryCommentsCount(artista.getNombre(), "unknown");
+			System.out.println("comentarios del pais: "+lucene.getCommentsCountry());
     		artistarepository.save(artista);
+    		System.out.println("\n\n");*/
     	}
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
         //System.out.println("hola fuí programado\n");
