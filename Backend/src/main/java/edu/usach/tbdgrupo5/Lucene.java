@@ -38,6 +38,7 @@ import com.mongodb.DBObject;
 public class Lucene {
 	private MongoConnection mongoConnection;
 	//private List<String> idList = null;
+	private List<List<String>> resultList = null;
 	private int positiveResult=0;
 	private int negativeResult=0;
 	private int neutralResult=0;
@@ -62,10 +63,14 @@ public class Lucene {
 			while (cursor.hasNext()) {
 			      DBObject cur = cursor.next();
 			      doc = new Document();
+			      /*System.out.println(cur.get("_id").toString());
+			      System.out.println(cur.get("text").toString());
+			      System.out.println(cur.get("userName").toString());*/
 			      doc.add(new StringField("id",cur.get("_id").toString(),Field.Store.YES));
-			      doc.add(new TextField("contenido", cur.get("text").toString(),Field.Store.YES));
+			      doc.add(new TextField("text", cur.get("text").toString(),Field.Store.YES));
 			      doc.add(new StringField("analysis",cur.get("analysis").toString(),Field.Store.YES));
 			      doc.add(new StringField("finalCountry",cur.get("finalCountry").toString(),Field.Store.YES));
+			      doc.add(new StringField("userName",cur.get("userName").toString(),Field.Store.YES));
 			      //System.out.println("pais del comentario indexando :"+ cur.get("finalCountry"));
 			      if (writer.getConfig().getOpenMode() == OpenMode.CREATE){
 						//System.out.println("Indexando el tweet: "+cur.get("text")+"\n");
@@ -73,7 +78,7 @@ public class Lucene {
 					}
 				else{
 						//System.out.println("Actualizando el tweet: "+cur.get("text")+"\n");
-						writer.updateDocument(new Term("contenido"+cur.get("text")), doc);
+						writer.updateDocument(new Term("text"+cur.get("text")), doc);
 				}
 			   }
 			cursor.close();
@@ -86,25 +91,29 @@ public class Lucene {
 		}
 		
 	}
-	public int indexSearch(String Artista){
+	public void indexSearch(String Artista){
 		try{
 			IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get("indice/")));
 			IndexSearcher searcher = new IndexSearcher(reader);
 			Analyzer analyzer = new StandardAnalyzer();
-			int resultados = 0;
 			this.positiveResult=0;
 			this.negativeResult=0;
 			this.neutralResult=0;
-			QueryParser parser = new QueryParser("contenido",analyzer);
+			this.resultList = new ArrayList<List<String>>();
+			QueryParser parser = new QueryParser("text",analyzer);
 			Query query = parser.parse(Artista);
-			//idList = new ArrayList<String>();
+			
 			countryList = new ArrayList<String>();
 			TopDocs result = searcher.search(query,25000);
 			ScoreDoc[] hits =result.scoreDocs;
 			//System.out.println("cantidad tweets:"+hits.length);
 			for (int i=0; i<hits.length;i++){
 				Document doc = searcher.doc(hits[i].doc);
-				//idList.add(doc.get("id"));
+				List<String> item = new ArrayList<String>();
+				//System.out.println(doc.get("userName"));
+				item.add(doc.get("userName"));
+				item.add(doc.get("text"));
+				this.resultList.add(item);
 
 				//System.out.println("pais del comentario indexando :"+ doc.get("finalCountry"));
 				if((doc.get("analysis")).equals("Positive")){
@@ -118,11 +127,10 @@ public class Lucene {
 				else if((doc.get("analysis")).equals("Neutral")){
 					this.neutralResult++;
 				}
-				//System.out.println((i+1) + ".- score="+hits[i].score+" doc="+hits[i].doc+" id="+doc.get("id")+ "twee="+doc.get("contenido"));
+				//System.out.println((i+1) + ".- score="+hits[i].score+" doc="+hits[i].doc+" id="+doc.get("id")+ "twee="+doc.get("text"));
 			}
 			
 			reader.close();
-			return resultados;
 			
 			
 		}
@@ -133,7 +141,7 @@ public class Lucene {
 		catch(ParseException ex){
 			Logger.getLogger(Lucene.class.getName()).log(Level.SEVERE,null,ex);
 		}
-		return 0;
+		//return 0;
 	}
 	public void countryCommentsCount(String artista, String country){
 		int comments= this.countryList.size();
@@ -145,9 +153,9 @@ public class Lucene {
 		}
 	}
 	
-	/*public List<String> getIdList(){
-		return this.idList;
-	}*/
+	public List<List<String>> getResultList(){
+		return this.resultList;
+	}
 	public int getpositiveResult(){
 		return this.positiveResult;
 	}

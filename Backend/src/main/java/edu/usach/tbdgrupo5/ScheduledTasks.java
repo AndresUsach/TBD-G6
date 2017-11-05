@@ -43,6 +43,13 @@ public class ScheduledTasks
     		countryList= paisrepository.findAll();
     		//System.out.println("entre a artista :D ");
     		lucene.indexSearch(artista.getNombre());
+    		/*System.out.println("Tamaño:"+lucene.getResultList().size());
+    		for(int i=0;i<lucene.getResultList().size();i++){
+    			for (int j=0;j<lucene.getResultList().get(i).size();j++){
+    				System.out.println(lucene.getResultList().get(i).get(j));
+    			}
+    			System.out.println("\n");
+    		}*/
     		/*System.out.println("Artista:"+ artista.getNombre());
     		System.out.println("Positivos: "+ lucene.getpositiveResult());
     		System.out.println("Negativos: "+ lucene.getnegativeResult());
@@ -77,6 +84,21 @@ public class ScheduledTasks
     	//System.out.println("Empezar\n");
 		MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
 		mc.connect();
-		System.out.println(mc.getUserNames());
+		//ESTA ES LA FUNCION QUE SIRVE PARA OBTENER LOS NOMBRES DE USUARIOS SIN REPETIR
+		//mc.getUserNames(); Retorna una lista de string con los nombres de los usuarios sin repetir
+		//El otro metodo es lucene.indexSearch(Artista) -> este no retorna nada pero deja en un atributo los resutlados
+		// este atributo se llama resultList para acceder a ese atributo esta el metodo getResultList()
+		/* el atributo resultList es una lista de lista que contiene strings cada lista dentro de la lista tiene dos string
+		 * los cuales corresponden al usuario y al tweet respectivamente es decir que el de la posicion 0 es el usuuario y el de la posicion 1 es el tweet
+		EJEMPLO::
+		lucene.indexSearch(artista.getNombre());
+		for(int i=0;i<lucene.getResultList().size();i++){
+			for (int j=0;j<lucene.getResultList().get(i).size();j++){
+				System.out.println(lucene.getResultList().get(i).get(j));
+			}
+			System.out.println("\n");
+		}*/
+		//System.out.println(mc.getUserNames());
+		
 	}
 }
