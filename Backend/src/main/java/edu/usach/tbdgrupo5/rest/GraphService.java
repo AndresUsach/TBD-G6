@@ -3,6 +3,7 @@ package edu.usach.tbdgrupo5.rest;
 import edu.usach.tbdgrupo5.Neo4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:8085")
@@ -31,25 +32,19 @@ public class GraphService {
         return this.graphFormat;
     }
 
-    /*
-    @RequestMapping( value = "/prueba" ,method = RequestMethod.GET)
+
+    @RequestMapping( value = "/crearArtistas" ,method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Object> graphPrueba() {
+    public void crearArtistas() throws SQLException {
         neo = new Neo4j();
         neo.connect("bolt://localhost", "neo4j", "root");
 
         neo.deleteAll();
 
-        //neo.crearEjemplo();
-
-        neo.getNodeList();
-        neo.getTweetRel();
-
-        this.graphFormat = neo.hacerGrafo();
+        neo.crearNodosArtistas();
 
         neo.disconnect();
-        return this.graphFormat;
     }
-    */
+
 
 }

@@ -1,15 +1,21 @@
 package edu.usach.tbdgrupo5;
 
+import edu.usach.tbdgrupo5.entities.Artista;
+import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import org.neo4j.driver.v1.AuthTokens;
 import org.neo4j.driver.v1.Driver;
 import org.neo4j.driver.v1.GraphDatabase;
 import org.neo4j.driver.v1.Record;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
-import sun.rmi.transport.ObjectTable;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Component;
 
+import java.sql.*;
 import java.util.*;
 
+@Component
 public class Neo4j
 {
 
@@ -212,5 +218,30 @@ public class Neo4j
         return result;
     }
 
+    public void crearNodosArtistas() throws SQLException {
+
+        List artistas = new ArrayList();
+
+        Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost:3306/tbd","root", "root");
+        Statement s = conexion.createStatement();
+        ResultSet rs = s.executeQuery ("SELECT * FROM artista");
+
+        while (rs.next())
+        {
+            artistas.add(rs.getString("nombre"));
+            //System.out.println (rs.getInt("idartista") + " " + rs.getString("nombre") );
+
+        }
+
+        conexion.close();
+
+        for(int i=0; i<artistas.size(); i++)
+        {
+            System.out.println("> Nombre: " + artistas.get(i));
+            String query = "CREATE (a:Artista" + "{" + "name:" + "'" + artistas.get(i) + "'" + "})";
+            session.run(query);
+        }
+
+    }
 
 }
