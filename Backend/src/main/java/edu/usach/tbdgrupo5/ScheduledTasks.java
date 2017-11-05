@@ -9,6 +9,8 @@ import edu.usach.tbdgrupo5.entities.Pais;
 import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import edu.usach.tbdgrupo5.repository.PaisRepository;
 
+import java.util.List;
+
 @Component
 public class ScheduledTasks
 {
@@ -82,8 +84,8 @@ public class ScheduledTasks
     public void mapreduce()
 	{
     	//System.out.println("Empezar\n");
-		MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
-		mc.connect();
+		//MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
+		//mc.connect();
 		//ESTA ES LA FUNCION QUE SIRVE PARA OBTENER LOS NOMBRES DE USUARIOS SIN REPETIR
 		//mc.getUserNames(); Retorna una lista de string con los nombres de los usuarios sin repetir
 		//El otro metodo es lucene.indexSearch(Artista) -> este no retorna nada pero deja en un atributo los resutlados
@@ -99,6 +101,31 @@ public class ScheduledTasks
 			System.out.println("\n");
 		}*/
 		//System.out.println(mc.getUserNames());
-		
+
+
+
+		/*
+		artistas= artistarepository.findAll();
+		for(Artista artista:artistas)
+		{
+			System.out.println("> Artista: " + artista.getNombre());
+
+			//lucene.indexSearch(artista.getNombre());
+
+			List<List<String>> lista = lucene.getListaUsuarioTweet(artista.getNombre());
+
+			for(int i=0;i<lista.size();i++)
+			{
+				for (int j=0;j<lista.get(i).size();j++)
+				{
+					System.out.println("> Usuarios para artista " + artista.getNombre() + ":");
+					System.out.println(lista.get(i).get(j));
+				}
+				System.out.println("\n");
+			}
+		}
+		System.out.println("> Usuarios: ");
+		System.out.println(mc.getUserNames());
+		*/
 	}
 }

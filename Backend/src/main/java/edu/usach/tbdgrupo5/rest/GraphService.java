@@ -12,9 +12,33 @@ import java.util.Map;
 public class GraphService {
 
     private Neo4j neo;
-    private Map<String, Object> graphFormat;
+    private Map<String, Object> grafo;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> mostrarGrafo() throws SQLException {
+        neo = new Neo4j();
+        neo.connect("bolt://localhost", "neo4j", "root");
+
+        this.grafo = neo.mostrarGrafo();
+
+        neo.disconnect();
+
+        return this.grafo;
+    }
+
+    @RequestMapping( value = "/crearGrafo" ,method = RequestMethod.GET)
+    @ResponseBody
+    public void crearGrafo() throws SQLException {
+        neo = new Neo4j();
+        neo.connect("bolt://localhost", "neo4j", "root");
+
+        neo.crearGrafo();
+
+        neo.disconnect();
+    }
+
+    @RequestMapping( value = "/ejemplo" ,method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> graph() {
         neo = new Neo4j();
@@ -26,25 +50,10 @@ public class GraphService {
         neo.getNodes();
         neo.getPlaysRelSingleList();
 
-        this.graphFormat = neo.makeGraphFormat();
+        this.grafo = neo.makeGraphFormat();
 
         neo.disconnect();
-        return this.graphFormat;
+        return this.grafo;
     }
-
-
-    @RequestMapping( value = "/crearArtistas" ,method = RequestMethod.GET)
-    @ResponseBody
-    public void crearArtistas() throws SQLException {
-        neo = new Neo4j();
-        neo.connect("bolt://localhost", "neo4j", "root");
-
-        neo.deleteAll();
-
-        neo.crearNodosArtistas();
-
-        neo.disconnect();
-    }
-
 
 }

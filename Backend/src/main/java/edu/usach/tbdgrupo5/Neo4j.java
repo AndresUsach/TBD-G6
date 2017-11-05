@@ -32,14 +32,11 @@ public class Neo4j
     private Driver driver;
     private Session session;
 
-    public List<Map<String, Object>> personNodes = new ArrayList<>();
-    public List<Map<String, Object>> gameNodes = new ArrayList<>();
-
     public List<Map<String, Object>> playsRel = new ArrayList<>();
     public List<Map<String, Object>> nodesListTest = new ArrayList<>();
 
-    public List<Map<String, Object>> nodeList = new ArrayList<>();
-    public List<Map<String, Object>> tweetRel = new ArrayList<>();
+    public List<Map<String, Object>> listaNodos = new ArrayList<>();
+    public List<Map<String, Object>> listaRelTweet = new ArrayList<>();
 
     public void connect(String uri, String username, String password)
     {
@@ -58,11 +55,20 @@ public class Neo4j
         driver.close();
     }
 
+    public void deleteNodeWithoutRel()
+    {
+        this.session.run("MATCH (n) WHERE size((n)--())=0 DELETE (n)");
+    }
+
     public void deleteAll()
     {
         this.session.run("match (a)-[r]->(b) delete r");
         this.session.run("match (n) delete n");
     }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void crearNodoPerson(String name, String type)
     {
@@ -218,7 +224,8 @@ public class Neo4j
         return result;
     }
 
-    public void crearNodosArtistas() throws SQLException {
+    public void crearNodosArtistas() throws SQLException
+    {
 
         List artistas = new ArrayList();
 
@@ -237,11 +244,144 @@ public class Neo4j
 
         for(int i=0; i<artistas.size(); i++)
         {
-            System.out.println("> Nombre: " + artistas.get(i));
+            //System.out.println("> Nombre: " + artistas.get(i));
             String query = "CREATE (a:Artista" + "{" + "name:" + "'" + artistas.get(i) + "'" + "})";
             session.run(query);
         }
 
+    }
+
+    public void crearNodosUsuarios()
+    {
+        MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
+        mc.connect();
+        List<String> listaUserNames = mc.getUserNames();
+
+        for(int i=0; i<listaUserNames.size(); i++)
+        {
+            //System.out.println("> Usuario: " + listaUserNames.get(i));
+            String query = "CREATE (a:Usuario" + "{" + "name:" + "'" + listaUserNames.get(i) + "'" + "})";
+            session.run(query);
+        }
+    }
+
+    public void crearRelacionTweet()
+    {
+        MongoConnection mc = new MongoConnection("tweets", "tweetsPrueba");
+        Lucene lucene = new Lucene(mc);
+
+        //Toma todos los artistas
+        StatementResult artistas = session.run("MATCH (a:Artista) return a.name as name");
+        while(artistas.hasNext())
+        {
+            //Para cada artista
+            Record recordArtista = artistas.next();
+            List<List<String>> lista = lucene.getListaUsuarioTweet(recordArtista.get("name").asString());
+
+            for(int i=0;i<lista.size();i++)
+            {
+                //System.out.println("> Usuario: " + lista.get(i).get(0) + " sobre artista: " + recordArtista.get("name").asString());
+                for (int j=0;j<lista.get(i).size();j++)
+                {
+
+                    if(j> 0)
+                    {
+                        //System.out.println("> Tweet #" + j + ": " + lista.get(i).get(j));
+
+                        //Reemplaza caracter de escape ' por "
+                        String tweetModified = lista.get(i).get(j).replaceAll("'", "\"");
+
+                        //System.out.println("> TweetModificado #" + j + ": " + tweetModified);
+
+                        String query = "match (a:Usuario) where a.name='" + lista.get(i).get(0) + "' "
+                                + "  match (b:Artista) where b.name='" + recordArtista.get("name").asString() + "' "
+                                + "  create (a)-[r:Tweet {texto:'" + tweetModified + "'}]->(b)";
+                        session.run(query);
+                    }
+                }
+                //System.out.println("\n");
+            }
+        }
+
+    }
+
+    public void getNodosUsuarioArtista()
+    {
+        int x = 0;
+
+        //Label Usuario 4
+        StatementResult nodes = session.run("MATCH (a:Usuario)-[r]->(b) return a.name as name, r.texto as texto");
+        while(nodes.hasNext())
+        {
+            Record record = nodes.next();
+            listaNodos.add(mapQuadruple("id", x, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", x));
+            x++;
+        }
+
+        //Label Artista 4
+        nodes = session.run("MATCH (a:Artista) return a.name as name");
+        while(nodes.hasNext())
+        {
+            Record record = nodes.next();
+            listaNodos.add(mapQuadruple("id", x,"userName", record.get("name").asString(), "tweet", "nothing" ,"weight", x));
+            x++;
+        }
+    }
+
+    public void getRelTweetNodo()
+    {
+        int uIndex = -1;
+        int aIndex = -1;
+        StatementResult rel = session.run("MATCH (a:Usuario)-[r:Tweet]->(b:Artista) RETURN a.name as usuario, r, b.name as artista");
+        while(rel.hasNext())
+        {
+            Record record = rel.next();
+
+            for(int i = 0; i< listaNodos.size(); i++)
+            {
+                if(listaNodos.get(i).get("userName").equals(record.get("usuario").asString()))
+                {
+                    uIndex = i;
+                    for(int j = 0; j< listaNodos.size(); j++)
+                    {
+                        //System.out.println("> userName: " + listaNodos.get(j).get("userName") + " artista: " + record.get("artista").asString());
+
+                        if(listaNodos.get(j).get("userName").equals(record.get("artista").asString()))
+                        {
+                            aIndex = j;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            listaRelTweet.add(mapDouble("source", uIndex, "target", aIndex));
+        }
+        /*
+        for(int i = 0; i<playsRel.size(); i++)
+        {
+            System.out.println("> Plays = source: " + playsRel.get(i).get("source") + ", target: " + playsRel.get(i).get("target"));
+        }
+        */
+    }
+
+    public void crearGrafo() throws SQLException {
+        this.deleteAll();
+
+        this.crearNodosArtistas();
+
+        this.crearNodosUsuarios();
+
+        this.crearRelacionTweet();
+
+        this.deleteNodeWithoutRel();
+    }
+
+    public Map<String, Object> mostrarGrafo()
+    {
+        this.getNodosUsuarioArtista();
+        this.getRelTweetNodo();
+        return mapDouble("nodes", listaNodos, "links", listaRelTweet);
     }
 
 }

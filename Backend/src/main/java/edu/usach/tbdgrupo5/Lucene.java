@@ -2,8 +2,14 @@ package edu.usach.tbdgrupo5;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -91,7 +97,8 @@ public class Lucene {
 		}
 		
 	}
-	public void indexSearch(String Artista){
+	public void indexSearch(String Artista)
+	{
 		try{
 			IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get("indice/")));
 			IndexSearcher searcher = new IndexSearcher(reader);
@@ -143,6 +150,7 @@ public class Lucene {
 		}
 		//return 0;
 	}
+
 	public void countryCommentsCount(String artista, String country){
 		int comments= this.countryList.size();
 		this.commentsCountry=0;
@@ -151,6 +159,43 @@ public class Lucene {
 				this.commentsCountry++;
 			}
 		}
+	}
+
+	public List<List<String>> getListaUsuarioTweet(String Artista)
+	{
+		List<List<String>> resultList = null;
+		try{
+			IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get("indice/")));
+			IndexSearcher searcher = new IndexSearcher(reader);
+			Analyzer analyzer = new StandardAnalyzer();
+			resultList = new ArrayList<List<String>>();
+			QueryParser parser = new QueryParser("text",analyzer);
+			Query query = parser.parse(Artista);
+
+			TopDocs result = searcher.search(query,25000);
+			ScoreDoc[] hits =result.scoreDocs;
+
+			for (int i=0; i<hits.length;i++)
+			{
+				Document doc = searcher.doc(hits[i].doc);
+				List<String> item = new ArrayList<String>();
+				//System.out.println(doc.get("userName"));
+				item.add(doc.get("userName"));
+				item.add(doc.get("text"));
+				resultList.add(item);
+			}
+			reader.close();
+		}
+		catch(IOException ex)
+		{
+			Logger.getLogger(Lucene.class.getName()).log(Level.SEVERE,null,ex);
+
+		}
+		catch(ParseException ex)
+		{
+			Logger.getLogger(Lucene.class.getName()).log(Level.SEVERE,null,ex);
+		}
+		return resultList;
 	}
 	
 	public List<List<String>> getResultList(){
@@ -172,4 +217,13 @@ public class Lucene {
 	public int getCommentsCountry() {
 		return commentsCountry;
 	}
+
+
+	private Map<String, Object> mapDouble(String key1, Object value1, String key2, Object value2) {
+		Map<String, Object> result = new HashMap<String, Object>(2);
+		result.put(key1, value1);
+		result.put(key2, value2);
+		return result;
+	}
+
 }
