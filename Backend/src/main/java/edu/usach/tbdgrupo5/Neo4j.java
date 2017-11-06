@@ -374,4 +374,19 @@ public class Neo4j
         return mapDouble("nodes", listaNodos, "links", listaRelTweet);
     }
 
+    public Map<String, Object> tweetMasInfluyente()
+    {
+        List<Map<String, Object>> lista = new ArrayList<>();
+
+        StatementResult nodes = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 1");
+        while(nodes.hasNext())
+        {
+            Record record = nodes.next();
+            lista.add(mapQuadruple("id", 0, "userName", record.get("name").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
+        }
+        return lista.get(0);
+    }
+
+
+
 }

@@ -13,6 +13,7 @@ public class GraphService {
 
     private Neo4j neo;
     private Map<String, Object> grafo;
+    private Map<String, Object> mas;
 
     @RequestMapping( method = RequestMethod.GET)
     @ResponseBody
@@ -54,6 +55,16 @@ public class GraphService {
 
         neo.disconnect();
         return this.grafo;
+    }
+
+    @RequestMapping( value = "/masInfluyente" ,method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> masInfluyente() {
+        neo = new Neo4j();
+        neo.connect("bolt://localhost", "neo4j", "root");
+        this.mas = neo.tweetMasInfluyente();
+        neo.disconnect();
+        return this.mas;
     }
 
 }
