@@ -85,6 +85,9 @@ header{
       vertical-align: middle;
       margin-left: 5px;
     }
+    .element{
+    transform: translateX(-200px) scale(.8);
+    }
     .date{
       color:darken($main-color,10%);
       font-size: 0.9em;

@@ -61,6 +61,9 @@
         <a href="#/generoNegativo" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-minus-circle" aria-hidden="true"></i>  Negativos</a>
       </div>
     <a href="#/mapa" id="Latinoamerica" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Latinoamerica')"><i class="fa fa-bullseye fa-fw"></i> Latinoamerica</a>
+
+    <a href="#/graph" id="Grafo2" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Grafo2')"><i class="fa fa-code-fork fa-fw"></i> Grafo relacional</a>
+
     <a href="#" id="Noticias" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Noticias')"><i class="fa fa-bell fa-fw"></i> Noticias</a>
     <a href="#" id="Settings" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Settings')"><i class="fa fa-cog fa-fw"></i> Settings</a><br><br>
       
