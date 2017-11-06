@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="" />
+    <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="Grafo listo">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -44,13 +46,13 @@
       <file leaf-file-name="Neo4j.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="246" column="0" lean-forward="true" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+            <state relative-caret-position="450">
+              <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
               <folding>
                 <element signature="e#7192#7208#0" expanded="true" />
                 <element signature="e#7527#7543#0" expanded="true" />
                 <element signature="e#7766#7782#0" expanded="true" />
-                <marker date="1509943763000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+                <marker date="1510007520000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
               </folding>
             </state>
           </provider>
@@ -418,6 +420,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../Front/plantilla-vue/src/main.js" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java" />
       </list>
     </option>
   </component>
@@ -737,7 +740,7 @@
       <workItem from="1509943889423" duration="604000" />
       <workItem from="1509980781438" duration="4698000" />
       <workItem from="1509992304202" duration="2880000" />
-      <workItem from="1510007318319" duration="150000" />
+      <workItem from="1510007318319" duration="213000" />
     </task>
     <task id="LOCAL-00001" summary="Jjsakdjksajdsjad">
       <created>1509993938971</created>
@@ -764,11 +767,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8369000" />
+    <option name="totallyTimeSpent" value="8432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -783,7 +785,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -844,7 +846,7 @@
             <element signature="e#7192#7208#0" expanded="true" />
             <element signature="e#7527#7543#0" expanded="true" />
             <element signature="e#7766#7782#0" expanded="true" />
-            <marker date="1509943763000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510007520000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -875,7 +877,7 @@
             <element signature="e#7192#7208#0" expanded="true" />
             <element signature="e#7527#7543#0" expanded="true" />
             <element signature="e#7766#7782#0" expanded="true" />
-            <marker date="1509943763000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510007520000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -948,13 +950,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="246" column="0" lean-forward="true" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
           <folding>
             <element signature="e#7192#7208#0" expanded="true" />
             <element signature="e#7527#7543#0" expanded="true" />
             <element signature="e#7766#7782#0" expanded="true" />
-            <marker date="1509943763000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510007520000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
