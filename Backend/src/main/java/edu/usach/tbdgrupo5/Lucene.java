@@ -55,7 +55,8 @@ public class Lucene {
 		this.mongoConnection = mongoConnection;
 	}
 	
-	public void indexCreate(){
+	public void indexCreate()
+	{
 		try{
 			Directory dir = FSDirectory.open(Paths.get("indice/"));
 			Analyzer analyzer = new StandardAnalyzer();

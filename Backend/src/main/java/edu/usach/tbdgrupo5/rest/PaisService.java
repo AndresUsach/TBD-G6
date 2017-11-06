@@ -1,8 +1,10 @@
 package edu.usach.tbdgrupo5.rest;
 
 import edu.usach.tbdgrupo5.entities.Artista;
+import edu.usach.tbdgrupo5.entities.Genero;
 import edu.usach.tbdgrupo5.entities.Pais;
 import edu.usach.tbdgrupo5.repository.ArtistaRepository;
+import edu.usach.tbdgrupo5.repository.GeneroRepository;
 import edu.usach.tbdgrupo5.repository.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,9 @@ public class PaisService
 
     @Autowired
     private ArtistaRepository artistaRepository;
+
+    @Autowired
+    private GeneroRepository generoRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
@@ -45,6 +50,24 @@ public class PaisService
     public Artista findArtistaByCountry(@PathVariable("id") Integer id)
     {
         Pais pais = paisRepository.findOne(id);
+
+        if(pais.getArtista() == null)
+        {
+            Genero genero = new Genero();
+            genero.setNombre("unknown");
+            genero.setComentariosNegativos(0);
+            genero.setComentariosPositivos(0);
+            genero.setComentariosNeutros(0);
+
+            Artista artista = new Artista();
+            artista.setNombre("unknown");
+            artista.setComentariosNeutros(0);
+            artista.setComentariosNegativos(0);
+            artista.setComentariosPositivos(0);
+            artista.setDescripcion("...");
+            artista.setGenero(genero);
+            return artista;
+        }
         return pais.getArtista();
     }
 

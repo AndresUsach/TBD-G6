@@ -10,7 +10,6 @@ import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import edu.usach.tbdgrupo5.repository.PaisRepository;
 
 import java.sql.SQLException;
-import java.util.List;
 
 @Component
 public class ScheduledTasks
@@ -33,6 +32,7 @@ public class ScheduledTasks
     	System.out.println("[Scheduled Task][Start]: Indexing tweets.");
     	lucene.indexCreate();
     	System.out.println("[Scheduled Task] [End] : Indexing tweets.\n");
+    	mc.disconnect();
     }
     @Scheduled(cron="10 * * * * *")
     public void updateComments()

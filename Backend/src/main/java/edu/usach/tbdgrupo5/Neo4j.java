@@ -259,6 +259,7 @@ public class Neo4j
             String query = "CREATE (a:Usuario" + "{" + "name:" + "'" + listaUserNames.get(i) + "'" + "})";
             session.run(query);
         }
+        mc.disconnect();
     }
 
     public void crearRelacionTweet()

@@ -43,7 +43,11 @@ public class MongoConnection {
 		this.collection = database.getCollection(this.collectionName);
 		
 	}
-	
+
+	void disconnect()
+	{
+		this.mongoClient.close();
+	}
 	
 	public void showTweets(){
 		DBCursor cursor = this.collection.find();
