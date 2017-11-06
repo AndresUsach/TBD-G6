@@ -51,34 +51,35 @@ public class PaisService
     @RequestMapping(value = "/mostrarMapa", method = RequestMethod.GET)
     public Map<String, Object> mostrarMapa()
     {
-        Map<String, Object> inside1 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(1).getNombre());
-        Map<String, Object> inside2 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(2).getNombre());
-        Map<String, Object> inside3 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(3).getNombre());
-        Map<String, Object> inside4 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(4).getNombre());
-        Map<String, Object> inside5 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(5).getNombre());
-        Map<String, Object> inside6 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(6).getNombre());
-        Map<String, Object> inside7 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(7).getNombre());
-        Map<String, Object> inside8 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(8).getNombre());
-        Map<String, Object> inside9 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(9).getNombre());
-        Map<String, Object> inside10 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(10).getNombre());
-        Map<String, Object> inside11 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(11).getNombre());
-        Map<String, Object> inside12 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(12).getNombre());
-        Map<String, Object> inside13 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(13).getNombre());
-        Map<String, Object> inside14 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(14).getNombre());
-        Map<String, Object> inside15 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(15).getNombre());
-        Map<String, Object> inside16 = mapDouble("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(16).getNombre());
+        Map<String, Object> inside1 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(1).getNombre(), "cantidadPositivos", this.findArtistaByCountry(1).getComentariosPositivos() );
+        Map<String, Object> inside2 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(2).getNombre(), "cantidadPositivos", this.findArtistaByCountry(2).getComentariosPositivos());
+        Map<String, Object> inside3 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(3).getNombre(), "cantidadPositivos", this.findArtistaByCountry(3).getComentariosPositivos());
+        Map<String, Object> inside4 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(4).getNombre(), "cantidadPositivos", this.findArtistaByCountry(4).getComentariosPositivos());
+        Map<String, Object> inside5 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(5).getNombre(), "cantidadPositivos", this.findArtistaByCountry(5).getComentariosPositivos());
+        Map<String, Object> inside6 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(6).getNombre(), "cantidadPositivos", this.findArtistaByCountry(6).getComentariosPositivos());
+        Map<String, Object> inside7 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(7).getNombre(), "cantidadPositivos", this.findArtistaByCountry(7).getComentariosPositivos());
+        Map<String, Object> inside8 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(8).getNombre(), "cantidadPositivos", this.findArtistaByCountry(8).getComentariosPositivos());
+        Map<String, Object> inside9 = mapTriple("fillKey", "NorteAmerica", "artista", this.findArtistaByCountry(9).getNombre(), "cantidadPositivos", this.findArtistaByCountry(9).getComentariosPositivos());
+        Map<String, Object> inside10 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(10).getNombre(), "cantidadPositivos", this.findArtistaByCountry(10).getComentariosPositivos());
+        Map<String, Object> inside11 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(11).getNombre(), "cantidadPositivos", this.findArtistaByCountry(11).getComentariosPositivos());
+        Map<String, Object> inside12 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(12).getNombre(), "cantidadPositivos", this.findArtistaByCountry(12).getComentariosPositivos());
+        Map<String, Object> inside13 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(13).getNombre(), "cantidadPositivos", this.findArtistaByCountry(13).getComentariosPositivos());
+        Map<String, Object> inside14 = mapTriple("fillKey", "CentroAmerica", "artista", this.findArtistaByCountry(14).getNombre(), "cantidadPositivos", this.findArtistaByCountry(14).getComentariosPositivos());
+        Map<String, Object> inside15 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(15).getNombre(), "cantidadPositivos", this.findArtistaByCountry(15).getComentariosPositivos());
+        Map<String, Object> inside16 = mapTriple("fillKey", "SurAmerica", "artista", this.findArtistaByCountry(16).getNombre(), "cantidadPositivos", this.findArtistaByCountry(16).getComentariosPositivos());
 
-        Map<String, Object> inside17 = mapDouble("fillKey", "SurAmerica", "artista", "unknown");
-        Map<String, Object> inside18 = mapDouble("fillKey", "SurAmerica", "artista", "unknown");
+        Map<String, Object> inside17 = mapTriple("fillKey", "CentroAmerica", "artista", "unknown", "cantidadPositivos", 0);
+        Map<String, Object> inside18 = mapTriple("fillKey", "CentroAmerica", "artista", "unknown", "cantidadPositivos", 0);
 
         return mapCountry(inside1,inside2,inside3,inside4,inside5,inside6,inside7,inside8,inside9,
                 inside10,inside11,inside12,inside13,inside14,inside15,inside16,inside17,inside18);
     }
 
-    private Map<String, Object> mapDouble(String key1, Object value1, String key2, Object value2) {
+    private Map<String, Object> mapTriple(String key1, Object value1, String key2, Object value2, String key3, Object value3) {
         Map<String, Object> result = new HashMap<String, Object>(2);
         result.put(key1, value1);
         result.put(key2, value2);
+        result.put(key3, value3);
         return result;
     }
 
