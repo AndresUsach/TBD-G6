@@ -5,7 +5,10 @@ import Actors from './Actors.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 import addUser from './addUser.vue';
-import grafico from './grafico.vue';
+import generoPlus from './grafico.vue';
+import artistaPlus from './grafico2.vue';
+import artistaMinus from './grafico3.vue';
+import generoMinus from './grafico4.vue';
 import totalGraph from './totalGraph.vue';
 import totalGraph2 from "./totalGraph2.vue";
 import mapa from "./mapaLatino.vue";
@@ -17,8 +20,10 @@ const routes = [
   { path: '/index', alias: '/', component: Index},
   { path:'/actors', component: Actors},
   { path: '/newActor', component: addUser },
-  { path: '/BarGraph', component: totalGraph},
-  { path: '/BarGraph2', component: totalGraph2},
+  { path: '/generoPositivo', component: generoPlus},
+  { path: '/generoNegativo', component: generoMinus},
+  { path: '/artistaPositivo', component: artistaPlus},
+  { path: '/artistaNegativo', component: artistaMinus},
   { path: '/mapa', component: mapa}
 ]
 

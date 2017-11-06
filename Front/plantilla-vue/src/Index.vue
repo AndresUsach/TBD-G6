@@ -17,21 +17,21 @@
 <div class="center">
 
     <div class="w3-card-4 w3-display-left w3-hover-grayscale" style="margin-left: 40px">
-      <a href="#/BarGraph"><img class="w3-image" src="./img/sing-hi.png" alt="Norway" style="width:100%"></a>
+      <a href="#/artistaPositivo"><img class="w3-image" src="./img/sing-hi.png" alt="Norway" style="width:100%"></a>
       <div class="w3-container w3-center w3-black">
         <p>Estadisticas sobre artistas</p>
       </div>
     </div>
 
     <div class="w3-card-4 w3-display-middle w3-hover-grayscale">
-      <a href="#/BarGraph2"><img class="w3-image" src="./img/genero.png" alt="Norway" style="width:100%"></a>
+      <a href="#/generoPositivo"><img class="w3-image" src="./img/genero.png" alt="Norway" style="width:100%"></a>
       <div class="w3-container w3-center w3-black">
         <p>Estadisticas sobre generos musicales</p>
       </div>
     </div>
 
     <div class="w3-card-4 w3-display-right w3-hover-grayscale" style="margin-right:50px;">
-      <img class="w3-image" src="./img/mapa.png" alt="Norway" style="width:100%">
+      <a href="#/mapa"><img class="w3-image" src="./img/mapa.png" alt="Norway" style="width:100%"></a>
       <div class="w3-container w3-center w3-black">
         <p>Estadisticias nivel sudamericano</p>
       </div>
