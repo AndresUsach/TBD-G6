@@ -33,6 +33,7 @@
     "chart.js": "^2.7.0",
     "d3": "^4.11.0",
     "datamaps": "^0.5.8",
+    "fsevents": "^1.1.2",
     "ng2-scrollspy": "^0.3.9",
     "vue": "^2.4.1",
     "vue-chartjs": "^2.8.7",
