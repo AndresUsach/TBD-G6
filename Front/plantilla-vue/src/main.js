@@ -12,6 +12,7 @@ import generoMinus from './grafico4.vue';
 import totalGraph from './totalGraph.vue';
 import totalGraph2 from "./totalGraph2.vue";
 import mapa from "./mapaLatino.vue";
+import grafo from "./grafo.vue";
 
 import App from './App.vue';
 Vue.use(VueRouter);
@@ -24,6 +25,7 @@ const routes = [
   { path: '/generoNegativo', component: generoMinus},
   { path: '/artistaPositivo', component: artistaPlus},
   { path: '/artistaNegativo', component: artistaMinus},
+  { path: '/graph', component: grafo},
   { path: '/mapa', component: mapa}
 ]
 
