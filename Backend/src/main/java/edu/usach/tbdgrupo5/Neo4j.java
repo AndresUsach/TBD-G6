@@ -225,7 +225,7 @@ public class Neo4j
 
         List artistas = new ArrayList();
 
-        Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost:3306/tbd","root", "root");
+        Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost:3306/tbd?useSSL=false","root", "root");
         Statement s = conexion.createStatement();
         ResultSet rs = s.executeQuery ("SELECT * FROM artista");
 

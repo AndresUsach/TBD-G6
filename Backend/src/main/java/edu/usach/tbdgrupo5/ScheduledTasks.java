@@ -26,7 +26,7 @@ public class ScheduledTasks
 	public int[] countryComments;
 	
 	
-    @Scheduled(cron="*/10 * * * * *")
+    @Scheduled(cron="*/60 * * * * *")
     public void indexCreateTask()
 	{
     	mc.connect();
@@ -34,7 +34,7 @@ public class ScheduledTasks
     	lucene.indexCreate();
     	System.out.println("[Scheduled Task] [End] : Indexing tweets.\n");
     }
-    @Scheduled(cron="*/10 * * * * *")
+    @Scheduled(cron="*/60 * * * * *")
     public void updateComments()
 	{
     	
@@ -64,7 +64,7 @@ public class ScheduledTasks
     	}
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
     }
-    @Scheduled(cron="*/30 * * * * *")
+    @Scheduled(cron="*/60 * * * * *")
     public void mapreduce() throws SQLException
 	{
     	System.out.println("[Scheduled Task][Start]: Update graph db.");
@@ -72,7 +72,7 @@ public class ScheduledTasks
         neo.connect("bolt://localhost", "neo4j", "root");
         neo.crearGrafo();
         neo.disconnect();
-        System.out.println("[Scheduled Task] [End] : Update graph db.");
+        System.out.println("[Scheduled Task] [End] : Update graph db.\n");
     	
 	}
 }
