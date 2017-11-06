@@ -11,6 +11,7 @@ Incluye:
 ### Instalación plantilla Vue
 
 * ir a carpeta `plantilla vue`
-* instalar dependencias de node `npm install`
+* instalar dependencias de node `npm install datamaps --save d3`
+* es necesario abrir el archivo plantilla-vue/node-modules/datamaps/dist/datamaps.all.js y modificar la linea 786: "Datamaps.prototype..." por "Datamap.prototype..."
 * ejecutar `npm run dev`
 * generar distribuible `npm run build`
