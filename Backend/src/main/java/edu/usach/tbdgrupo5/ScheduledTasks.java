@@ -61,6 +61,7 @@ public class ScheduledTasks
 					paisrepository.save(countryArtista);
 				}
 			}
+			artistarepository.save(artista);
     	}
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
     }
