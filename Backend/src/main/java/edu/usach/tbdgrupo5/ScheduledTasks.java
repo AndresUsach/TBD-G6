@@ -26,7 +26,7 @@ public class ScheduledTasks
 	public int[] countryComments;
 	
 	
-    @Scheduled(cron="*/60 * * * * *")
+    @Scheduled(cron="10 * * * * *")
     public void indexCreateTask()
 	{
     	mc.connect();
@@ -34,7 +34,7 @@ public class ScheduledTasks
     	lucene.indexCreate();
     	System.out.println("[Scheduled Task] [End] : Indexing tweets.\n");
     }
-    @Scheduled(cron="*/60 * * * * *")
+    @Scheduled(cron="10 * * * * *")
     public void updateComments()
 	{
     	
@@ -65,7 +65,7 @@ public class ScheduledTasks
     	}
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
     }
-    @Scheduled(cron="*/60 * * * * *")
+    @Scheduled(cron="10 * * * * *")
     public void mapreduce() throws SQLException
 	{
     	System.out.println("[Scheduled Task][Start]: Update graph db.");

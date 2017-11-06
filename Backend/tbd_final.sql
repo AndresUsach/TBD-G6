@@ -47,7 +47,19 @@ CREATE TABLE `artista` (
 
 LOCK TABLES `artista` WRITE;
 /*!40000 ALTER TABLE `artista` DISABLE KEYS */;
-INSERT INTO `artista` VALUES (1,'El negrito de ojos claros','Ozuna',1,1,0,0,0),(2,'	Cantante y Actriz','Becky G',2,1,0,0,0),(3,'	La Criatura','Nacho',3,1,0,0,0),(4,'Cantante','Natti Natasha',3,1,0,0,0),(5,'Cantante y compositor','Danny Ocean',4,1,0,0,0),(6,'	Cantautor','J Balvin',3,1,0,0,0),(7,'	Cantautor','Romeo Santos',5,1,0,0,0),(8,'DJ','Alex Sensation',6,1,0,0,0),(9,'Rey del reguetón','Daddy Yankee',3,1,0,0,0),(10,'La Leyenda Viviente','Yandel',3,1,0,0,0);
+INSERT INTO `artista` VALUES (1,'El negrito de ojos claros','Ozuna',1,1,0,0,0);
+INSERT INTO `artista` VALUES (2,'Cantante y Actriz','Becky G',2,1,0,0,0);
+INSERT INTO `artista` VALUES (3,'Cantante y compositor de reggaeton','Maluma',2,1,0,0,0);
+INSERT INTO `artista` VALUES (4,'Cantante','Luis Fonsi',4,1,0,0,0);
+INSERT INTO `artista` VALUES (5,'Cantante y compositor','Danny Ocean',3,1,0,0,0);
+INSERT INTO `artista` VALUES (6,'Cantautor','J Balvin',2,1,0,0,0);
+INSERT INTO `artista` VALUES (7,'Cantautor','Romeo Santos',4,1,0,0,0);
+INSERT INTO `artista` VALUES (8,'Cantante','Shakira',5,1,0,0,0);
+INSERT INTO `artista` VALUES (9,'Rey del reguetón','Daddy Yankee',2,1,0,0,0);
+INSERT INTO `artista` VALUES (10,'La Leyenda Viviente','Yandel',2,1,0,0,0);
+
+
+
 /*!40000 ALTER TABLE `artista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +86,12 @@ CREATE TABLE `genero` (
 
 LOCK TABLES `genero` WRITE;
 /*!40000 ALTER TABLE `genero` DISABLE KEYS */;
-INSERT INTO `genero` VALUES (1,'Trap',0,0,0),(2,'rap',0,0,0),(3,'reggaeton',0,0,0),(4,'electropop',0,0,0),(5,'bachata',0,0,0),(6,'pop latino',0,0,0);
+INSERT INTO `genero` VALUES (1,'trap',0,0,0);
+INSERT INTO `genero` VALUES (2,'reggaeton',0,0,0);
+INSERT INTO `genero` VALUES (3,'electropop',0,0,0);
+INSERT INTO `genero` VALUES (4,'bachata',0,0,0);
+INSERT INTO `genero` VALUES (5,'pop latino',0,0,0);
+
 /*!40000 ALTER TABLE `genero` ENABLE KEYS */;
 UNLOCK TABLES;
 
