@@ -19,5 +19,5 @@ Incluye:
 
 Nota:
 Para los pc que no poseen macOS, deben quitar la dependencia fsevents del package.json de la carpeta Front
-Luego ejecutar dentro de la plantilla vue el siguiente comando : " npm i -f " les bajara las dependencias standares de npm sin el fsevents
-Finalnente ejecutar npm run dev para correr la aplicacion de frontend
+Luego ejecutar dentro de la plantilla vue el siguiente comando : "# npm i -f " les bajara las dependencias standares de npm sin el fsevents
+Finalnente ejecutar # npm run dev para correr la aplicacion de frontend
