@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0e93c69-13ea-4d18-91e2-7a8beb713202" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Backend/src/main/java/edu/usach/tbdgrupo5/Time.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Backend/src/main/java/edu/usach/tbdgrupo5/rest/TimeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/Lucene.class" afterPath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/Lucene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/MongoConnection.class" afterPath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/MongoConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/Neo4j.class" afterPath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/Neo4j.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" afterPath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/rest/PaisService.class" afterPath="$PROJECT_DIR$/../Backend/out/production/classes/edu/usach/tbdgrupo5/rest/PaisService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" afterPath="$PROJECT_DIR$/../Backend/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Backend/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/../Backend/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +35,8 @@
       <file leaf-file-name="TwitterStreaming.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cl/citiaps/twitter/streaming/TwitterStreaming.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="131" column="56" lean-forward="true" selection-start-line="131" selection-start-column="56" selection-end-line="131" selection-end-column="56" />
+            <state relative-caret-position="301">
+              <caret line="132" column="62" lean-forward="true" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -654,12 +647,12 @@
       <option name="presentableId" value="Default" />
       <updated>1509943854171</updated>
       <workItem from="1509943855525" duration="31000" />
-      <workItem from="1510007973681" duration="3009000" />
+      <workItem from="1510007973681" duration="4137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3040000" />
+    <option name="totallyTimeSpent" value="4168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -672,7 +665,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -715,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cl/citiaps/twitter/streaming/TwitterStreaming.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="131" column="56" lean-forward="true" selection-start-line="131" selection-start-column="56" selection-end-line="131" selection-end-column="56" />
+        <state relative-caret-position="301">
+          <caret line="132" column="62" lean-forward="true" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
           <folding />
         </state>
       </provider>

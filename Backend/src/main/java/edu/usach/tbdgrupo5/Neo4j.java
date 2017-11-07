@@ -304,13 +304,24 @@ public class Neo4j
     {
         int x = 0;
 
+        List<String> agregados = new ArrayList<String>();
+
         //Label Usuario 4
-        StatementResult nodes = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 100");
+        StatementResult nodes = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 80");
         while(nodes.hasNext())
         {
             Record record = nodes.next();
-            listaNodos.add(mapQuadruple("id", x, "userName", record.get("usuario").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
-            x++;
+
+            if(agregados.contains( record.get("usuario").asString() ))
+            {
+
+            }
+            else
+            {
+                listaNodos.add(mapQuadruple("id", x, "userName", record.get("usuario").asString(), "tweet", record.get("texto").asString() ,"weight", Double.parseDouble(record.get("followerRank").asString()) ));
+                x++;
+                agregados.add( record.get("usuario").asString() );
+            }
         }
 
         //Label Artista 4
@@ -328,7 +339,7 @@ public class Neo4j
         int uIndex = -1;
         int aIndex = -1;
         //StatementResult rel = session.run("MATCH (a:Usuario)-[r:Tweet]->(b:Artista) RETURN a.name as usuario, r, b.name as artista");
-        StatementResult rel = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 100");
+        StatementResult rel = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 80");
         while(rel.hasNext())
         {
             Record record = rel.next();
@@ -337,7 +348,7 @@ public class Neo4j
             {
                 if(listaNodos.get(i).get("userName").equals(record.get("usuario").asString()))
                 {
-                    uIndex = i;
+                    uIndex = Integer.parseInt(listaNodos.get(i).get("id").toString());
 
                     for(int j = 0; j< listaNodos.size(); j++)
                     {
@@ -345,7 +356,7 @@ public class Neo4j
 
                         if(listaNodos.get(j).get("userName").equals(record.get("artista").asString()))
                         {
-                            aIndex = j;
+                            aIndex = Integer.parseInt(listaNodos.get(j).get("id").toString());
                             break;
                         }
                     }
@@ -365,6 +376,37 @@ public class Neo4j
 
         this.crearRelacionTweet();
 
+        this.deleteNodeWithoutRel();
+
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
+        this.deleteNodeWithoutRel();
         this.deleteNodeWithoutRel();
     }
 
