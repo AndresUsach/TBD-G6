@@ -338,7 +338,6 @@ public class Neo4j
     {
         int uIndex = -1;
         int aIndex = -1;
-        //StatementResult rel = session.run("MATCH (a:Usuario)-[r:Tweet]->(b:Artista) RETURN a.name as usuario, r, b.name as artista");
         StatementResult rel = session.run("MATCH (u:Usuario)-[r:Tweet]-(a:Artista) RETURN u.name AS usuario, r.followerRank as followerRank, r.texto AS texto, a.name AS artista ORDER BY r.followerRank DESC LIMIT 80");
         while(rel.hasNext())
         {

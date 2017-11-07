@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/Neo4j.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/Neo4j.class" />
+    <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="Nodos repetidos eliminados">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../twitter-streaming-master/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,11 +35,10 @@
       <file leaf-file-name="Neo4j.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="316" column="0" lean-forward="true" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="340" column="0" lean-forward="false" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
               <folding>
-                <element signature="e#10889#10897#0" expanded="true" />
-                <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+                <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
               </folding>
             </state>
           </provider>
@@ -449,9 +445,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="-22" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="922" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -522,10 +519,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -659,7 +656,11 @@
       <workItem from="1510007318319" duration="213000" />
       <workItem from="1510007900190" duration="72000" />
       <workItem from="1510008243418" duration="8245000" />
-      <workItem from="1510023334441" duration="1916000" />
+      <workItem from="1510023334441" duration="2483000" />
+      <workItem from="1510027399443" duration="87000" />
+      <workItem from="1510027521110" duration="33000" />
+      <workItem from="1510029211204" duration="434000" />
+      <workItem from="1510059808286" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Jjsakdjksajdsjad">
       <created>1509993938971</created>
@@ -696,26 +697,32 @@
       <option name="project" value="LOCAL" />
       <updated>1510012997484</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Nodos repetidos eliminados">
+      <created>1510025329161</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1510025329162</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18665000" />
+    <option name="totallyTimeSpent" value="19799000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="-22" width="1440" height="922" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16235293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35647058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38235295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -734,6 +741,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -749,13 +757,86 @@
     <MESSAGE value="Grafo listo" />
     <MESSAGE value="Detalles mongo y mapas" />
     <MESSAGE value="Tiempo listo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tiempo listo" />
+    <MESSAGE value="Nodos repetidos eliminados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nodos repetidos eliminados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5175">
+          <caret line="345" column="0" lean-forward="true" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+          <folding>
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5220">
+          <caret line="348" column="51" lean-forward="false" selection-start-line="348" selection-start-column="51" selection-end-line="348" selection-end-column="51" />
+          <folding>
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5250">
+          <caret line="350" column="86" lean-forward="true" selection-start-line="350" selection-start-column="86" selection-end-line="350" selection-end-column="86" />
+          <folding>
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4245">
+          <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+          <folding>
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -769,8 +850,7 @@
         <state relative-caret-position="5970">
           <caret line="398" column="36" lean-forward="true" selection-start-line="398" selection-start-column="36" selection-end-line="398" selection-end-column="36" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -798,8 +878,7 @@
         <state relative-caret-position="3465">
           <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -834,8 +913,7 @@
         <state relative-caret-position="3690">
           <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -863,8 +941,7 @@
         <state relative-caret-position="3270">
           <caret line="218" column="33" lean-forward="false" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -892,8 +969,7 @@
         <state relative-caret-position="3270">
           <caret line="218" column="33" lean-forward="true" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
@@ -1017,7 +1093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,11 +1114,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="316" column="0" lean-forward="true" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="340" column="0" lean-forward="false" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
           <folding>
-            <element signature="e#10889#10897#0" expanded="true" />
-            <marker date="1510025257000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
+            <marker date="1510059820000" expanded="true" signature="8170:8191" ph="SELECT * FRO... artista" />
           </folding>
         </state>
       </provider>
