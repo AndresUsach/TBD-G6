@@ -2,6 +2,7 @@
 <div class="container">
 <div class="center">
   <h1>Mapa con información de artistas por paises</h1>
+  <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
 </div>
 <div class="pull-left">
 <div id="mapa" class="pull-left" style="position: relative;width: 1050px; height: 700px;margin-left: 100px;"></div>
@@ -16,7 +17,21 @@
 <script>
     import Datamap from 'datamaps';
     export default{
+        data: function(){
+            return{
+                tiempo: []
+            }
+        },
       mounted: function(){
+        this.$http.get('http://localhost:2323/backend-tbd/time/mapa')
+            .then(response=>{
+               // get body data
+              this.tiempo = response.body; 
+             console.log('tiempo',this.tiempo)
+            }, response=>{
+               // error callback
+               console.log('error cargando lista');
+            });
         var map = new Datamap({element: document.getElementById('mapa'),
                 scope: 'world',
                 paises: [],

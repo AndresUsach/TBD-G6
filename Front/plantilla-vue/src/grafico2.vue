@@ -3,6 +3,7 @@
 
 <div class="w3-container w3-center" id="grafico2">
 	<h1> Artistas con valoraciones positivas</h1>
+  <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
 		<svg width="960" height="500"></svg>
 
 
@@ -18,7 +19,8 @@ import * as d3 from 'd3';
 export default{
   data: function(){
     return {
-      data2 : []
+      data2 : [],
+      tiempo: []
     }
   },
   mounted:function(){
@@ -30,6 +32,16 @@ export default{
       this.data2 = response.body;
       this.loadGraph(this.data2);	
      console.log('data2',this.data2)
+    }, response=>{
+       // error callback
+       console.log('error cargando lista');
+    });
+    this.$http.get('http://localhost:2323/backend-tbd/time/artistas')
+
+    .then(response=>{
+       // get body data
+      this.tiempo = response.body; 
+     console.log('tiempo',this.tiempo)
     }, response=>{
        // error callback
        console.log('error cargando lista');

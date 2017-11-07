@@ -1,7 +1,8 @@
 <template>
-	<div class= "w3-container w3-row-padding" id="grafo">
+	<div class= "w3-container w3-row-padding w3-center" id="grafo">
 	<br><br>
 	<h2>Gráfico de relaciones entre usuarios y artistas </h2>
+  <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
 		<div class="w3-center w3-card-4" id="chart"></div>
 
 	</div>
@@ -12,7 +13,8 @@
 export default{
 	data: function(){
 		return{
-			data: []
+			data: [],
+      tiempo: []
 		}
 	},
 	methods:{
@@ -90,7 +92,17 @@ export default{
 	      this.cargarGrafo(this.data);
 	    }, response=>{
 	      console.log("error de conexion");
-	    })
+	    });
+    this.$http.get('http://localhost:2323/backend-tbd/time/grafo')
+
+    .then(response=>{
+       // get body data
+      this.tiempo = response.body; 
+     console.log('tiempo',this.tiempo)
+    }, response=>{
+       // error callback
+       console.log('error cargando lista');
+    })
 	}
 }
 </script>
