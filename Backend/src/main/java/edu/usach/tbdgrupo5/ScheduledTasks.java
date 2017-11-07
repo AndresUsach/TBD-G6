@@ -64,6 +64,11 @@ public class ScheduledTasks
 			artistarepository.save(artista);
     	}
     	System.out.println("[Scheduled Task] [End] : Update comments.\n");
+
+    	Time time = Time.getInstance();
+    	time.setArtistas();
+    	time.setGeneros();
+    	time.setMapa();
     }
     @Scheduled(cron="10 * * * * *")
     public void mapreduce() throws SQLException
@@ -74,6 +79,8 @@ public class ScheduledTasks
         neo.crearGrafo();
         neo.disconnect();
         System.out.println("[Scheduled Task] [End] : Update graph db.\n");
-    	
+
+		Time time = Time.getInstance();
+		time.setGrafo();
 	}
 }
