@@ -35,6 +35,14 @@ public class Time {
         return dtf.format(now).toString();
     }
 
+    public String getCurrentDate()
+    {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        //System.out.println(dtf.format(now)); //2016/11/16
+        return dtf.format(now).toString();
+    }
+
     public String getArtistas() {
         return artistas;
     }

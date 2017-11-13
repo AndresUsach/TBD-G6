@@ -58,10 +58,18 @@ public class TimeService
         return result;
     }
 
+    @RequestMapping(value = "/date", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getCurrentDate()
+    {
+        this.time = Time.getInstance();
+        Map<String, Object> result = mapSingle("date", this.time.getCurrentDate());
+        return result;
+    }
+
     private Map<String, Object> mapSingle(String key1, Object value1) {
         Map<String, Object> result = new HashMap<String, Object>(2);
         result.put(key1, value1);
         return result;
     }
-
 }

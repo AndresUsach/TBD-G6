@@ -244,3 +244,12 @@ UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='15';
 UPDATE `tbd`.`pais` SET `comentarios_positivos`='0' WHERE `idpais`='16';
 
 
+CREATE TABLE `tbd`.`registro` (
+  `idregistro` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL DEFAULT 'unknown',
+  `fecha` VARCHAR(10) NULL DEFAULT '0000-00-00',
+  `comentarios_negativos` INT NULL DEFAULT 0,
+  `comentarios_positivos` INT NULL DEFAULT 0,
+  `comentarios_neutros` INT NULL DEFAULT 0,
+  PRIMARY KEY (`idregistro`));
+
