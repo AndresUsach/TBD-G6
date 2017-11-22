@@ -64,7 +64,7 @@
 
     <a href="#/graph" id="Grafo2" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Grafo2')"><i class="fa fa-code-fork fa-fw"></i> Grafo relacional</a>
 
-    <a href="#" id="Noticias" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Noticias')"><i class="fa fa-bell fa-fw"></i> Noticias</a>
+    <a href="#/historial" id="Historial" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Historial')"><i class="fa fa-history"></i> Historial</a>
     <a href="#" id="Settings" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Settings')"><i class="fa fa-cog fa-fw"></i> Settings</a><br><br>
       
       
@@ -87,6 +87,9 @@
 
 </div>
 </template>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script>
 

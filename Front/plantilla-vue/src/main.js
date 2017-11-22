@@ -13,6 +13,7 @@ import totalGraph from './totalGraph.vue';
 import totalGraph2 from "./totalGraph2.vue";
 import mapa from "./mapaLatino.vue";
 import grafo from "./grafo.vue";
+import historial from "./historialArtista.vue";
 
 import App from './App.vue';
 Vue.use(VueRouter);
@@ -26,7 +27,8 @@ const routes = [
   { path: '/artistaPositivo', component: artistaPlus},
   { path: '/artistaNegativo', component: artistaMinus},
   { path: '/graph', component: grafo},
-  { path: '/mapa', component: mapa}
+  { path: '/mapa', component: mapa},
+  { path: '/historial', component: historial}
 ]
 
 // Create the router instance and pass the `routes` option
