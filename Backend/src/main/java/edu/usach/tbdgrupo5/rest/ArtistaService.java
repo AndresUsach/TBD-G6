@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.usach.tbdgrupo5.entities.Artista;
 import edu.usach.tbdgrupo5.entities.Genero;
+import edu.usach.tbdgrupo5.entities.Usuario;
+import edu.usach.tbdgrupo5.repository.UsuarioRepository;
 import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import edu.usach.tbdgrupo5.repository.GeneroRepository;
 
@@ -26,6 +28,9 @@ public class ArtistaService {
 	
 	@Autowired
 	private GeneroRepository generoRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
@@ -38,18 +43,26 @@ public class ArtistaService {
 	public  Artista findOne(@PathVariable("id") Integer id) {
 		return artistaRepository.findOne(id);
 	}
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public void delete(@PathVariable("id") Integer id) {
-		artistaRepository.delete(id);
-		return ;
+	public void update(@PathVariable("id") Integer id, @RequestBody Artista resource) {
+		Artista artista = artistaRepository.findOne(id);
+		artista.setComentariosNegativos(0);
+		artista.setComentariosPositivos(0);
+		artista.setComentariosNeutros(0);
+		artista.setDescripcion(resource.getDescripcion);
+		artista.setNombre(resource.getNombre);
+		artista.setUsuario(resource.getUsuario);
+		artista.setGenero(resource.getGenero);
 	}
 	
-	@RequestMapping(value = "/{idgenero}/genero", method = RequestMethod.POST)
+	@RequestMapping(value = "/{idgenero}/{idusuario}", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
-	public Artista create(@PathVariable("idegenero") Integer idgenero,@RequestBody Artista resource) {
+	public Artista create(@PathVariable("idgenero") Integer idgenero, @PathVariable("idusuario") Integer idusuario,@RequestBody Artista resource) {
 		Genero genero = generoRepository.findOne(idgenero);
+		Usuario usuario = usuarioRepository.findOne(idusuario);
+		resource.setUsuario(usuario);
 		resource.setGenero(genero);
 	    return artistaRepository.save(resource);
 	}

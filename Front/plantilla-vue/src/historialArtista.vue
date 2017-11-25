@@ -72,18 +72,26 @@ export default{
 
 		var x = d3.scaleBand().rangeRound([0, width]).padding(0.45),
 		    y = d3.scaleLinear().rangeRound([height, 0]);
-
-		var g = svg.append("g")
-		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		var arrayValores = [];
+		for(var i = registro.length -1; i >= 0 ; i--){
+		    if(registro[i].nombre != selected){
+		        registro.splice(i, 1);
+		    }
+		}
 
 		
 
 		  x.domain(registro.map(function(d) { if(d.nombre === selected){
+		  	arrayValores.push(d.comentariosPositivos);
+
 		  	return d.fecha;
 		  	 }
 		  	}));
-		  y.domain([0, d3.max(registro, function(d) { return d.comentariosPositivos; })]);
+		  y.domain([0, d3.max(arrayValores)]);
 		  //y.domain([0, 1]); // eje y en rangos de 0% hasta el 100%
+
+		var g = svg.append("g")
+		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		  g.append("g")
 		      .attr("class", "axis axis--x")
