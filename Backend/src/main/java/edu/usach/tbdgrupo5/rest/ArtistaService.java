@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.usach.tbdgrupo5.entities.Artista;
+import edu.usach.tbdgrupo5.entities.Genero;
 import edu.usach.tbdgrupo5.repository.ArtistaRepository;
+import edu.usach.tbdgrupo5.repository.GeneroRepository;
 
 @CrossOrigin(origins = "http://localhost:8085")
 @RestController  
@@ -21,6 +23,9 @@ public class ArtistaService {
 	
 	@Autowired
 	private ArtistaRepository artistaRepository;
+	
+	@Autowired
+	private GeneroRepository generoRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
@@ -33,12 +38,20 @@ public class ArtistaService {
 	public  Artista findOne(@PathVariable("id") Integer id) {
 		return artistaRepository.findOne(id);
 	}
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void delete(@PathVariable("id") Integer id) {
+		artistaRepository.delete(id);
+		return ;
+	}
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/{idgenero}/genero", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
-	public Artista create(@RequestBody Artista resource) {
-	     return artistaRepository.save(resource);
+	public Artista create(@PathVariable("idegenero") Integer idgenero,@RequestBody Artista resource) {
+		Genero genero = generoRepository.findOne(idgenero);
+		resource.setGenero(genero);
+	    return artistaRepository.save(resource);
 	}
 	 
 }
