@@ -43,17 +43,19 @@ public class ArtistaService {
 	public  Artista findOne(@PathVariable("id") Integer id) {
 		return artistaRepository.findOne(id);
 	}
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/{id}/{idGenero}/{idUsuario}", method = RequestMethod.PUT)
 	@ResponseBody
-	public void update(@PathVariable("id") Integer id, @RequestBody Artista resource) {
+	public void update(@PathVariable("id") Integer id, @PathVariable("idGenero") Integer idGenero, @PathVariable("idUsuario") Integer idUsuario, @RequestBody Artista resource) {
 		Artista artista = artistaRepository.findOne(id);
+		Genero genero = generoRepository.findOne(idGenero);
+		Usuario usuario = usuarioRepository.findOne(idUsuario);
 		artista.setComentariosNegativos(0);
 		artista.setComentariosPositivos(0);
 		artista.setComentariosNeutros(0);
-		artista.setDescripcion(resource.getDescripcion);
-		artista.setNombre(resource.getNombre);
-		artista.setUsuario(resource.getUsuario);
-		artista.setGenero(resource.getGenero);
+		artista.setDescripcion(resource.getDescripcion());
+		artista.setNombre(resource.getNombre());
+		artista.setUsuario(usuario);
+		artista.setGenero(genero);
 	}
 	
 	@RequestMapping(value = "/{idgenero}/{idusuario}", method = RequestMethod.POST)
