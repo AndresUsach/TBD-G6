@@ -71,6 +71,9 @@ public class ArtistaService {
 		Artista artista = artistaRepository.findOne(id);
 		Genero genero = generoRepository.findOne(idGenero);
 		Usuario usuario = usuarioRepository.findOne(idUsuario);
+		System.out.println("id:"+ id);
+		System.out.println("id:"+ idGenero);
+		System.out.println("id:"+ idUsuario);
 		artista.setComentariosNegativos(0);
 		artista.setComentariosPositivos(0);
 		artista.setComentariosNeutros(0);

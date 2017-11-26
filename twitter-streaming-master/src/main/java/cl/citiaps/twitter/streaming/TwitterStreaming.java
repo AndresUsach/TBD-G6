@@ -147,7 +147,7 @@ public class TwitterStreaming
 			public void onStatus(Status status) 
 			{
 				
-				printKeyWords();
+				//printKeyWords();
 				//Almacena solo tweets en español
 				if(status.getLang().equalsIgnoreCase("es"))
 				{
@@ -197,7 +197,7 @@ public class TwitterStreaming
 	{
 		TwitterStreaming ts = new TwitterStreaming();
 		ts.init();
-		System.out.println("Empezando!");
+		//System.out.println("Empezando!");
 		while(true){
 			Thread.sleep (10000); 
 			if(ts.verifyKeys()){
