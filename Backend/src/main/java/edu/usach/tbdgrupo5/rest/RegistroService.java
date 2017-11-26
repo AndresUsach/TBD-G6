@@ -53,6 +53,24 @@ public class RegistroService
         return "Created";
     }
 
+    @RequestMapping( value = "/archivar/{id}" ,method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseBody
+    public String createByArtistId(@PathVariable("id") int id)
+    {
+        Artista artista = artistaRepository.findOne(id);
+
+        this.time = Time.getInstance();
+        Registro registro = new Registro();
+        registro.setNombre(artista.getNombre());
+        registro.setFecha(this.time.getCurrentDate());
+        registro.setComentariosNegativos(artista.getComentariosNegativos());
+        registro.setComentariosNeutros(artista.getComentariosNeutros());
+        registro.setComentariosPositivos(artista.getComentariosPositivos());
+        registroRepository.save(registro);
+        return "Created";
+    }
+
     @RequestMapping( value = "/artista/{nombre}" ,method = RequestMethod.GET)
     @ResponseBody
     public List<Registro> getRegistroArtista(@PathVariable("nombre") String nombre)
