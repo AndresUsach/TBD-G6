@@ -1,5 +1,7 @@
 package edu.usach.tbdgrupo5.rest;
 
+import java.io.FileWriter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.usach.tbdgrupo5.entities.Artista;
 import edu.usach.tbdgrupo5.entities.Keyword;
+import edu.usach.tbdgrupo5.repository.ArtistaRepository;
 import edu.usach.tbdgrupo5.repository.KeywordRepository;
 
 @RestController  
@@ -19,7 +23,9 @@ public class KeywordService {
 	
 	@Autowired
 	private KeywordRepository keywordRepository;
+	
 
+	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Iterable<Keyword> getAllUsers() {
@@ -31,6 +37,7 @@ public class KeywordService {
 	public  Keyword findOne(@PathVariable("id") Integer id) {
 		return keywordRepository.findOne(id);
 	}
+	
 	
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)

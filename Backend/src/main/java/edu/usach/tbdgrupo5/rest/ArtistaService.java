@@ -34,7 +34,8 @@ public class ArtistaService {
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-
+	
+	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Iterable<Artista> getAllArtists() {
@@ -58,11 +59,16 @@ public class ArtistaService {
 			ex.printStackTrace();
 		}
 	}
+	@RequestMapping(value = "/restart", method = RequestMethod.GET)
+	@ResponseBody
+	public  void restart() {
+		updateKeyWords();
+	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public  Artista findOne(@PathVariable("id") Integer id) {
-		updateKeyWords();
+		
 		return artistaRepository.findOne(id);
 	}
 	@RequestMapping(value = "/{id}/{idGenero}/{idUsuario}", method = RequestMethod.PUT)
@@ -71,9 +77,6 @@ public class ArtistaService {
 		Artista artista = artistaRepository.findOne(id);
 		Genero genero = generoRepository.findOne(idGenero);
 		Usuario usuario = usuarioRepository.findOne(idUsuario);
-		System.out.println("id:"+ id);
-		System.out.println("id:"+ idGenero);
-		System.out.println("id:"+ idUsuario);
 		artista.setComentariosNegativos(0);
 		artista.setComentariosPositivos(0);
 		artista.setComentariosNeutros(0);

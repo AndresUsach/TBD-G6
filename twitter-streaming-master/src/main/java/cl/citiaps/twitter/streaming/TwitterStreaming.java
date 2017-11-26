@@ -201,7 +201,7 @@ public class TwitterStreaming
 		while(true){
 			Thread.sleep (10000); 
 			if(ts.verifyKeys()){
-				System.out.println("Entre al if");
+				//System.out.println("Entre al if");
 				ts.loadKeywords();
 				ts.resetVerify();
 				ts.twitterStream.shutdown();
