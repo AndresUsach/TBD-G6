@@ -1,5 +1,7 @@
 package edu.usach.tbdgrupo5.rest;
 
+import java.io.FileWriter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.usach.tbdgrupo5.entities.Artista;
 import edu.usach.tbdgrupo5.entities.Genero;
+import edu.usach.tbdgrupo5.entities.Pais;
 import edu.usach.tbdgrupo5.entities.Usuario;
 import edu.usach.tbdgrupo5.repository.UsuarioRepository;
 import edu.usach.tbdgrupo5.repository.ArtistaRepository;
@@ -34,13 +37,32 @@ public class ArtistaService {
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Iterable<Artista> getAllUsers() {
+	public Iterable<Artista> getAllArtists() {
 		return artistaRepository.findAll();
+	}
+	public void updateKeyWords(){
+		Iterable<Artista> artistas = getAllArtists();
+		
+		try{
+			FileWriter fichero = new FileWriter("words.dat");
+			FileWriter ficheroverificador = new FileWriter("verificador.txt");
+			ficheroverificador.write("true");
+			for(Artista artista:artistas){
+				fichero.write(artista.getNombre()+ "\n");
+			}
+			
+			fichero.close();
+			ficheroverificador.close();
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public  Artista findOne(@PathVariable("id") Integer id) {
+		updateKeyWords();
 		return artistaRepository.findOne(id);
 	}
 	@RequestMapping(value = "/{id}/{idGenero}/{idUsuario}", method = RequestMethod.PUT)
