@@ -81,6 +81,7 @@ public class ArtistaService {
 		artista.setNombre(resource.getNombre());
 		artista.setUsuario(usuario);
 		artista.setGenero(genero);
+		artistaRepository.save(artista);
 	}
 	
 	@RequestMapping(value = "/{idgenero}/{idusuario}", method = RequestMethod.POST)
