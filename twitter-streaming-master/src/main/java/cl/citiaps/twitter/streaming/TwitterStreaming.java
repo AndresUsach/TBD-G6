@@ -1,5 +1,8 @@
 package cl.citiaps.twitter.streaming;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.HashSet;
@@ -50,13 +53,58 @@ public class TwitterStreaming
         this.artistFinder = ArtistFinder.getInstance();
         this.artistFinder.loadArtists();
 	}
+	private void printKeyWords(){
+		System.out.println(this.keywords);
+	}
+	private boolean verifyKeys(){
+		try{
+			FileReader lector = new FileReader("../Backend/verificador.txt");
+			BufferedReader br = new BufferedReader(lector);
+			String buffer = br.readLine();
+			//System.out.println(br.readLine());
+			if(buffer.equals("true")){
+				return true;
+			}
+			else if(buffer.equals("false")){
+				return false;
+			}
+		}catch(Exception err){
+			System.out.println(err.getMessage());
+			return false;
+		}
+		return false;
+		
+		
+	}
 
+	private boolean resetVerify(){
+		try{
+			FileWriter fichero = new FileWriter("../Backend/verificador.txt");
+			fichero.write("false\n");
+
+			fichero.close();
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return true;
+	}
 	private void loadKeywords() 
 	{
 		try 
 		{
-			ClassLoader classLoader = getClass().getClassLoader();
-			keywords.addAll(IOUtils.readLines(classLoader.getResourceAsStream("words.dat"), "UTF-8"));
+			/*ClassLoader classLoader = getClass().getClassLoader();
+			keywords.addAll(IOUtils.readLines(classLoader.getResourceAsStream("../Backend/words.dat"), "UTF-8"));*/
+			FileReader lector = new FileReader("../Backend/words.dat");
+			BufferedReader br = new BufferedReader(lector);
+			String buffer = br.readLine();
+			this.keywords = new HashSet<>();
+			while(buffer != null){
+				this.keywords.add(buffer);
+				buffer = br.readLine();
+
+			}
+			lector.close();
 		} catch (IOException e) 
 		{
 			e.printStackTrace();
@@ -98,6 +146,8 @@ public class TwitterStreaming
 			@Override
 			public void onStatus(Status status) 
 			{
+				
+				printKeyWords();
 				//Almacena solo tweets en español
 				if(status.getLang().equalsIgnoreCase("es"))
 				{
@@ -137,16 +187,29 @@ public class TwitterStreaming
 		};
 
 		FilterQuery fq = new FilterQuery();
-
 		fq.track(keywords.toArray(new String[0]));
-
 		this.twitterStream.addListener(listener);
 		this.twitterStream.filter(fq);
+		//this.twitterStream.shutdown();
 	}
 	
-	public static void main(String[] args) throws UnknownHostException 
+	public static void main(String[] args) throws UnknownHostException, InterruptedException 
 	{
-		new TwitterStreaming().init();
+		TwitterStreaming ts = new TwitterStreaming();
+		ts.init();
+		System.out.println("Empezando!");
+		while(true){
+			Thread.sleep (10000); 
+			if(ts.verifyKeys()){
+				System.out.println("Entre al if");
+				ts.loadKeywords();
+				ts.resetVerify();
+				ts.twitterStream.shutdown();
+				ts.init();
+			}
+			
+		}
+		
 
 		/*
 		//Neo4j
