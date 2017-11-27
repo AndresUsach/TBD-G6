@@ -122,7 +122,7 @@
               return Math.abs(item.values.value);
             },
             "balloonFunction": function(item) {
-              return item.category + ": " + Math.abs(item.values.value);
+              return item.category + ": " + Math.abs(item.values.value)+ "%";
             }
           }, {
             "fillAlphas": 0.7,
@@ -130,13 +130,13 @@
             "type": "column",
             "valueField": "comentariosNegativos",
             "title": "Comentarios negativos",
-            "labelText": "[[value]]",
+            "labelText": "[[value]]" ,
             "clustered": false,
             "labelFunction": function(item) {
               return Math.abs(item.values.value);
             },
             "balloonFunction": function(item) {
-              return item.category + ": " + Math.abs(item.values.value);
+              return item.category + ": " + Math.abs(item.values.value)+"%";
             }
           }],
           "categoryField": "nombre",
