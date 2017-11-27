@@ -9,7 +9,7 @@
         <p><button 
             type="submit" 
             class="btn btn-primary" 
-            v-on:click="signUp">
+            v-on:click="selectMode">
             Iniciar sesion</button>
         </p>
         <img class="w3-circle w3-margin-right" src="./img/MusicTweet.png"  style="width:200px"/>
@@ -42,11 +42,18 @@ export default {
             })
    },
   methods:{
-      signUp:function() {
+        selectMode:function() {
             if (this.authenticate(this.username,this.pass,this.users)) {
                 alert(this.username+",iniciando sesion");
                 this.authuser=true;
-                router.push('/admin');
+                router.push('/Select');
+            }
+        },
+        LoginGenero:function() {
+            if (this.authenticate(this.username,this.pass,this.users)) {
+                alert(this.username+",iniciando sesion");
+                this.authuser=true;
+                router.push('/newGenre');
             }
         },
         authenticate:function(UserName,Pass,Data){

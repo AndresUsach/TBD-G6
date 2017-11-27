@@ -19,6 +19,7 @@ import administracion from "./administracion.vue";
 import newGenre from "./newGenre.vue";
 import Prueba from "./Prueba.vue";
 import prueban from "./prueban.vue";
+import SelectMode from './selectAdmin.vue';
 
 
 import App from './App.vue';
@@ -38,7 +39,8 @@ const routes = [
   { path: '/admin', component: administracion},
   { path:'/login', component: Login},
   { path: '/newGenre', component: newGenre},
-  {path: '/Prueba', component: prueban}
+  { path: '/Prueba', component: prueban},
+  { path: '/Select', component: SelectMode}
   
 ]
 
