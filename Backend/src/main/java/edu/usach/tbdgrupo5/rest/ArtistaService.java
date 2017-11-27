@@ -39,7 +39,13 @@ public class ArtistaService {
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Iterable<Artista> getAllArtists() {
-		return artistaRepository.findAll();
+
+		Iterable<Artista> artistas = artistaRepository.findAll();
+		for(Artista artista:artistas)
+		{
+			artista.setComentariosNegativos(-1 * artista.getComentariosNegativos());
+		}
+		return artistas;
 	}
 	public void updateKeyWords(){
 		Iterable<Artista> artistas = getAllArtists();
