@@ -49,13 +49,6 @@ export default {
                 router.push('/Select');
             }
         },
-        LoginGenero:function() {
-            if (this.authenticate(this.username,this.pass,this.users)) {
-                alert(this.username+",iniciando sesion");
-                this.authuser=true;
-                router.push('/newGenre');
-            }
-        },
         authenticate:function(UserName,Pass,Data){
             for (var i in Data){
                 if(UserName==Data[i].username){
