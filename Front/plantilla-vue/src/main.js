@@ -16,6 +16,9 @@ import grafo from "./grafo.vue";
 import historial from "./historialArtista.vue";
 import administracion from "./administracion.vue";
 import newGenre from "./newGenre.vue";
+import Prueba from "./Prueba.vue";
+import prueban from "./prueban.vue";
+
 
 import App from './App.vue';
 Vue.use(VueRouter);
@@ -32,7 +35,8 @@ const routes = [
   { path: '/mapa', component: mapa},
   { path: '/historial', component: historial},
   { path: '/admin', component: administracion},
-  { path: '/newGenre', component: newGenre}
+  { path: '/newGenre', component: newGenre},
+  {path: '/Prueba', component: prueban}
 ]
 
 // Create the router instance and pass the `routes` option
