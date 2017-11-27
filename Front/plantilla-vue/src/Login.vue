@@ -17,8 +17,8 @@
 
 </template>
 
-<<script>
-import {router} from   './main.js'
+<script>
+import {router} from './main.js'
 export default {
   
   data(){
@@ -29,14 +29,18 @@ export default {
         authuser: false
       }
   },
-  created(){
-    console.log('Index.vue');
-    // GET /someUrl
-    this.$http.get('http://localhost:2323/backend-tbd/usuarios').then(function(data){
-        this.users = data.body;
-        console.log('users',this.users);;
-    })
-  },
+  mounted:function(){
+            // GET /someUrl
+            this.$http.get('http://localhost:2323/backend-tbd/usuarios')
+            .then(response=>{
+               // get body data
+              this.users = response.body;
+             console.log('usuarios',this.users)
+            }, response=>{
+               // error callback
+               console.log('error cargando lista');
+            })
+   },
   methods:{
       signUp:function() {
             if (this.authenticate(this.username,this.pass,this.users)) {
