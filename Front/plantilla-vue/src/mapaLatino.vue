@@ -1,11 +1,13 @@
 <template>
-<div class="container">
-<div class="center">
+<div class="w3-container">
+<div class="w3-card-4" style="width: 70%; margin-left: 150px;margin-top: 40px">
+<div class="w3-container w3-teal">
   <h1>Mapa con información de artistas por paises</h1>
   <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
 </div>
 <div class="pull-left">
 <div id="mapa" class="pull-left" style="position: relative;width: 1050px; height: 700px;margin-left: 100px;"></div>
+</div>
 </div>
 </div>
 </template>

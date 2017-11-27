@@ -1,48 +1,46 @@
 <template>
     <div class="w3-container">
         <div class="w3-center">
-        <h1>Actualización de artistas y generos</h1>
-        <label>Seleccione el artista a reemplazar (Obligatorio): </label>
-        <select v-model="selected">
-            <option v-for="a in artistas">
-                {{ a.nombre }}
-            </option>
-        </select>
-    </div>
-    <div class="w3-left" style="margin-left: 100px;">
-        <br><br>
-        <h4>Nuevos datos:</h4>
-        <div>
-            <br>
-            <label>Nombre del artista (Obligatorio):</label><br>
-            <input type="text" v-model= "nuevoArtista.nombre">
-          </div>
-        <div>
-            <br>
-            <label>Descripción del artista:</label><br>
-            <input type="text" v-model="nuevoArtista.descripcion">
+          <h1>Actualización de artistas</h1>
         </div>
-        <div>
-            <br>
-            <label>Escoge el genero del artista (Obligatorio):</label><br>
-            <select v-model="selectedGen">
+  <div class="w3-card-4" style="width: 70%; margin-left: 150px;">
+    <div class="w3-container w3-teal">
+      <h2>Nuevo Artista</h2>
+    </div>
+
+    <form class="w3-container">
+      <p>
+      <label class="w3-text-teal"><b>Nombre del artista (Obligatorio):</b></label>
+      <input class="w3-input w3-border" type="text" v-model= "nuevoArtista.nombre" style="width: 30%"></p>
+      <p>
+      <label class="w3-text-teal"><b>Descripción del artista:</b></label>
+      <input class="w3-input w3-border" type="text" v-model="nuevoArtista.descripcion"></p>
+      <p>
+      <select class="w3-select w3-border" name="option" v-model="selectedGen">
+        <option value="" disabled selected>Escoge el genero del artista (Obligatorio):</option>
                 <option v-for="g in generos">
                     {{ g.nombre }}
                 </option>
-            </select>
-        </div>
+      </select></p>
+      <p>
+      <select class="w3-select w3-border" name="option" v-model="selected">
+        <option value="" disabled selected>Seleccione el artista a reemplazar (Obligatorio): </option>
+                <option v-for="a in artistas">
+                  {{ a.nombre }}
+                </option>
+      </select></p>
 
-          <div>
-            <br><br>
-            <button id="agregarArtista" v-on:click= "mostrarMensaje" >Actualizar artistas </button>
-          </div>
-          <div>
-            <br><br>
-            <label>El siguiente botón es necesario para capturar opiniones de tu nuevo artista</label><br><br>
-            <button id="generarRegistro" v-on:click= "cargarArtista" disabled="true" >Reiniciar la captura de opiniones </button>
-          </div>
+      <p>
+
+      <button class="w3-btn w3-blue-grey" v-on:click= "mostrarMensaje" >Actualizar artistas </button></p>
+
+      <p>
+
+      <button class="w3-btn w3-teal" id="generarRegistro" v-on:click= "cargarArtista" disabled="true" >Reiniciar la captura de opiniones </button></p>
+    </form>
 
     </div>
+
     </div>
 </template>
 
