@@ -25,7 +25,7 @@ public class ScheduledTasks
 	public int[] countryComments;
 	
 	
-    @Scheduled(cron="0 0 * * *")
+    @Scheduled(cron="0 0 * * * *")
     public void indexCreateTask()
 	{
     	mc.connect();
@@ -34,7 +34,7 @@ public class ScheduledTasks
     	System.out.println("[Scheduled Task] [End] : Indexing tweets.\n");
     	mc.disconnect();
     }
-    @Scheduled(cron="0 0 * * *")
+    @Scheduled(cron="0 0 * * * *")
     public void updateComments()
 	{
     	
@@ -70,7 +70,7 @@ public class ScheduledTasks
     	time.setGeneros();
     	time.setMapa();
     }
-    @Scheduled(cron="0 0 * * *")
+    @Scheduled(cron="0 0 * * * *")
     public void mapreduce() throws SQLException
 	{
     	System.out.println("[Scheduled Task][Start]: Update graph db.");

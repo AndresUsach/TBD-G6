@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Artista.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Artista.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Genero.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Genero.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/ArtistaService.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/ArtistaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/GeneroService.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/GeneroService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/PaisService.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/PaisService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -31,76 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArtistaService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java">
+      <file leaf-file-name="ScheduledTasks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="55" column="148" lean-forward="false" selection-start-line="55" selection-start-column="148" selection-end-line="55" selection-end-column="148" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneroService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistroService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="47" column="76" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2711#2721#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Artista.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Artista.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Genero.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Genero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="58" column="46" lean-forward="false" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="-8">
+              <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -494,7 +420,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/PaisService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/MongoConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Lucene.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Time.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/TimeService.java" />
@@ -509,6 +434,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
       </list>
     </option>
   </component>
@@ -571,40 +497,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tbdgrupo5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tbdgrupo5" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tbdgrupo5" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tbdgrupo5" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -877,7 +769,7 @@
       <workItem from="1511462733523" duration="34000" />
       <workItem from="1511584030715" duration="494000" />
       <workItem from="1511663182222" duration="1229000" />
-      <workItem from="1511728451655" duration="6598000" />
+      <workItem from="1511728451655" duration="7662000" />
     </task>
     <task id="LOCAL-00001" summary="Jjsakdjksajdsjad">
       <created>1509993938971</created>
@@ -963,11 +855,25 @@
       <option name="project" value="LOCAL" />
       <updated>1511814917764</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Dos decimales">
+      <created>1511819655721</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1511819655721</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Scheduled tasks a las 0.00">
+      <created>1511820868107</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1511820868107</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36350000" />
+    <option name="totallyTimeSpent" value="37414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -989,7 +895,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3070588" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3070588" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17882353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1024,7 +930,9 @@
     <MESSAGE value="Registro artistas por su ID" />
     <MESSAGE value="Comentarios negativos en valor negativo" />
     <MESSAGE value="Comentarios normalizados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comentarios normalizados" />
+    <MESSAGE value="Dos decimales" />
+    <MESSAGE value="Scheduled tasks a las 0.00" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scheduled tasks a las 0.00" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1382,11 +1290,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="83" column="24" lean-forward="false" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+        <state relative-caret-position="443">
+          <caret line="55" column="148" lean-forward="false" selection-start-line="55" selection-start-column="148" selection-end-line="55" selection-end-column="148" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="47" column="76" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2711#2721#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1406,14 +1343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1422,39 +1351,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        <state relative-caret-position="540">
+          <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="47" column="76" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2711#2721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="55" column="148" lean-forward="false" selection-start-line="55" selection-start-column="148" selection-end-line="55" selection-end-column="148" />
+        <state relative-caret-position="-8">
+          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding />
         </state>
       </provider>
