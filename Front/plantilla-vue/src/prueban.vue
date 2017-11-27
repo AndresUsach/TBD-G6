@@ -178,7 +178,7 @@
             "align": "middle"
           }],
          "export": {
-            "enabled": true
+            "enabled": false
           }
 
         });

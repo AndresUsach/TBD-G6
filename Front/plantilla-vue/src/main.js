@@ -37,8 +37,8 @@ const routes = [
   { path: '/historial', component: historial},
   { path: '/admin', component: administracion},
   { path: '/newGenre', component: newGenre},
-  {path: '/Prueba', component: prueban}
-  { path: '/login', compoment: login },
+  {path: '/Prueba', component: prueban},
+  { path: '/login', compoment: login }
 
 ]
 
