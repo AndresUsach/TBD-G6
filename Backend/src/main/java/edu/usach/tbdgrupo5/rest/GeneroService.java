@@ -24,8 +24,15 @@ public class GeneroService {
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Iterable<Genero> getAllUsers() {
-		return generoRepository.findAll();
+	public Iterable<Genero> getAllUsers()
+	{
+		Iterable<Genero> generos = generoRepository.findAll();
+
+		for(Genero genero:generos)
+		{
+			genero.setComentariosNegativos(-1*genero.getComentariosNegativos());
+		}
+		return generos;
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
