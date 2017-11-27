@@ -47,7 +47,7 @@
           Artistas<i class="fa fa-caret-down w3-right"></i>
       </a>
       <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="#/admin" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Administrar artistas</a>
+        <a href="#/login" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Administrar artistas</a>
         <a href="#/artistaPositivo" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Positivos</a>
         <a href="#/artistaNegativo" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-minus-circle" aria-hidden="true"></i>  Negativos</a>
       </div>
@@ -55,7 +55,7 @@
         Generos <i class="fa fa-caret-down w3-right"></i>
       </a>
       <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="#/newGenre" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Nuevo Genero</a>
+        <a href="#/logingen" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Nuevo Genero</a>
         <a href="#/generoPositivo" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Positivos</a>
         <a href="#/generoNegativo" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-minus-circle" aria-hidden="true"></i>  Negativos</a>
       </div>

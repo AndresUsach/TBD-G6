@@ -14,6 +14,7 @@ import totalGraph2 from "./totalGraph2.vue";
 import mapa from "./mapaLatino.vue";
 import grafo from "./grafo.vue";
 import login from "./Login.vue";
+import LoginGen from "./LoginGen.vue";
 import historial from "./historialArtista.vue";
 import administracion from "./administracion.vue";
 import newGenre from "./newGenre.vue";
@@ -38,7 +39,8 @@ const routes = [
   { path: '/admin', component: administracion},
   { path: '/newGenre', component: newGenre},
   {path: '/Prueba', component: prueban},
-  { path: '/login', compoment: login }
+  { path: '/login', compoment: login },
+  { path: '/logingen', compoment: LoginGen}
 
 ]
 
