@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.lang.Math;
+import java.text.DecimalFormat;
+
 import edu.usach.tbdgrupo5.entities.Genero;
 import edu.usach.tbdgrupo5.repository.GeneroRepository;
 
@@ -38,8 +41,8 @@ public class GeneroService {
 		}
 		for(Genero genero:generos)
 		{
-			genero.setComentariosPositivos( genero.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) );
-			genero.setComentariosNegativos( (-1.0 * genero.getComentariosNegativos()) * 100.0 / (totalNegativos + totalPositivos) );
+			genero.setComentariosPositivos( this.roundTwoDecimals(( genero.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) )) );
+			genero.setComentariosNegativos( this.roundTwoDecimals((-genero.getComentariosNegativos() * 100.0 / (totalNegativos + totalPositivos) )) );
 		}
 		return generos;
 	}
@@ -56,5 +59,12 @@ public class GeneroService {
 	public Genero create(@RequestBody Genero resource) {
 	     return generoRepository.save(resource);
 	}
-	 
+
+	public double roundTwoDecimals(double d)
+	{
+		DecimalFormat twoDForm = new DecimalFormat("#.##");
+		return Double.valueOf(twoDForm.format(d).replace(',', '.'));
+	}
+
+
 }

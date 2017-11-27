@@ -1,6 +1,7 @@
 package edu.usach.tbdgrupo5.rest;
 
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,8 +52,8 @@ public class ArtistaService {
 		}
 		for(Artista artista:artistas)
 		{
-			artista.setComentariosPositivos( artista.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) );
-			artista.setComentariosNegativos( (-1.0 * artista.getComentariosNegativos()) * 100.0 / (totalNegativos + totalPositivos) );
+			artista.setComentariosPositivos( this.roundTwoDecimals(( artista.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) )) );
+			artista.setComentariosNegativos( this.roundTwoDecimals((-artista.getComentariosNegativos() * 100.0 / (totalNegativos + totalPositivos) )) );
 		}
 		return artistas;
 	}
@@ -111,6 +112,12 @@ public class ArtistaService {
 		resource.setUsuario(usuario);
 		resource.setGenero(genero);
 	    return artistaRepository.save(resource);
+	}
+
+	public double roundTwoDecimals(double d)
+	{
+		DecimalFormat twoDForm = new DecimalFormat("#.##");
+		return Double.valueOf(twoDForm.format(d).replace(',', '.'));
 	}
 	 
 }
