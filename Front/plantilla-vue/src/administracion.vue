@@ -2,7 +2,7 @@
     <div class="w3-container">
         <div class="w3-center">
         <h1>Actualización de artistas y generos</h1>
-        <label>Seleccione el artista a reemplazar </label>
+        <label>Seleccione el artista a reemplazar (Obligatorio): </label>
         <select v-model="selected">
             <option v-for="a in artistas">
                 {{ a.nombre }}
@@ -14,18 +14,32 @@
         <h4>Nuevos datos:</h4>
         <div>
             <br>
-            <label>Nombre del artista:</label>
+            <label>Nombre del artista (Obligatorio):</label><br>
             <input type="text" v-model= "nuevoArtista.nombre">
           </div>
         <div>
             <br>
-            <label>Descripción del artista:</label>
-            <input type="text" name="nuevoArtista.descripcion">
+            <label>Descripción del artista:</label><br>
+            <input type="text" v-model="nuevoArtista.descripcion">
+        </div>
+        <div>
+            <br>
+            <label>Escoge el genero del artista (Obligatorio):</label><br>
+            <select v-model="selectedGen">
+                <option v-for="g in generos">
+                    {{ g.nombre }}
+                </option>
+            </select>
         </div>
 
           <div>
             <br><br>
-            <button v-on:click= "mostrarMensaje" >Agregar </button>
+            <button id="agregarArtista" v-on:click= "mostrarMensaje" >Actualizar artistas </button>
+          </div>
+          <div>
+            <br><br>
+            <label>El siguiente botón es necesario para capturar opiniones de tu nuevo artista</label><br><br>
+            <button id="generarRegistro" v-on:click= "cargarArtista" disabled="true" >Reiniciar la captura de opiniones </button>
           </div>
 
     </div>
@@ -39,6 +53,7 @@
                 artistas: [],
                 generos: [],
                 selected: '',
+                selectedGen: '',
               nuevoArtista: {
                 nombre:'',
                 descripcion:'',
@@ -72,26 +87,66 @@
         },
           methods:{
 
+            cargarArtista: function(event){
+                this.$http.get('http://localhost:2323/backend-tbd/artistas/restart').then(response=>{
+
+                console.log("Reiniciada la captura de comentarios.");
+
+                document.getElementById("generarRegistro").disabled = true;
+                  alert(' Se ha reiniciado la captura de comentarios de los artistas.');
+
+                  },response=>{
+
+                    console.log("Falla en la conexion con el servidor");
+                  });
+            },
+
             mostrarMensaje: function(event){
+                
 
+              if (this.nuevoArtista.nombre == '' || this.selected == '' || this.selectedGen == '') {
+                alert('Asegurese de tener los campos obligatorios con datos');
 
-              if (this.nuevoArtista.nombre == '') {
-                alert('Rellene el campo de nombre');
+                
               }
               else{
+                document.getElementById("agregarArtista").disabled = true;
+                document.getElementById("generarRegistro").disabled = false;
 
-                this.$http.post('http://localhost:2323/backend-tbd/artistas/0/1', this.nuevoArtista).then(response=>{
+                for(var i = this.artistas.length -1; i >= 0 ; i--){
+                    if(this.artistas[i].nombre == this.selected){
+                        idArtista = this.artistas[i].idartista;
+                        console.log(idArtista);
+                    }
+                }
 
-                console.log("Conexion exitosa con el servidor");
+                for(var i = this.generos.length -1; i >= 0 ; i--){
+                    if(this.generos[i].nombre == this.selectedGen){
+                        idGenero = this.generos[i].idgenero;
+                        console.log(idGenero);
+                    }
+                }
+                this.$http.post('http://localhost:2323/backend-tbd/registro/archivar/' + idArtista).then(response=>{
 
-              alert(' Su artista ha sido agregado con exito');
+                console.log("Guardado en el registro el artista eliminado.");
 
-              },response=>{
+                  },response=>{
 
-                console.log("Falla en la conexion con el servidor");
+                    console.log("Falla en la conexion con el servidor");
+                  });
 
-              alert(' Hubo falla en la conexion del servidor');
-              })
+                this.$http.put('http://localhost:2323/backend-tbd/artistas/' + idArtista + '/' + idGenero + '/1', this.nuevoArtista).then(response=>{
+
+                console.log("Agreago el nuevo artista", this.nuevoArtista);
+
+                  alert(' Su artista ha sido agregado con exito');
+
+                  },response=>{
+
+                    console.log("Falla en la conexion con el servidor");
+
+                  alert(' Hubo falla en la conexion del servidor');
+                  })
 
             }
               }
