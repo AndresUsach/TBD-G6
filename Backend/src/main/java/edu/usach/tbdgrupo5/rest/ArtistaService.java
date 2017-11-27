@@ -2,6 +2,8 @@ package edu.usach.tbdgrupo5.rest;
 
 import java.io.FileWriter;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,8 +41,53 @@ public class ArtistaService {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Iterable<Artista> getAllArtists() {
+	public List<Artista> getAllArtists() {
 
+		List<Artista> artistasList = new ArrayList<Artista>();
+
+		double totalPositivos = 0.0;
+		double totalNegativos = 0.0;
+
+		double max = 0;
+
+		Iterable<Artista> artistas = artistaRepository.findAll();
+
+		for(Artista artista:artistas)
+		{
+			if(max < artista.getComentariosNegativos())
+			{
+				max = artista.getComentariosNegativos();
+			}
+			if(max < artista.getComentariosPositivos())
+			{
+				max = artista.getComentariosPositivos();
+			}
+			totalPositivos = totalPositivos + artista.getComentariosPositivos();
+			totalNegativos = totalNegativos + artista.getComentariosNegativos();
+		}
+		for(Artista artista:artistas)
+		{
+			artista.setComentariosPositivos( this.roundTwoDecimals(( artista.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) )) );
+			artista.setComentariosNegativos( this.roundTwoDecimals((-artista.getComentariosNegativos() * 100.0 / (totalNegativos + totalPositivos) )) );
+		}
+		for(Artista artista:artistas)
+		{
+			artistasList.add(artista);
+		}
+
+		Artista falso = new Artista();
+
+		falso.setNombre("Margen");
+		falso.setComentariosNegativos(this.roundTwoDecimals(( -max * 100.0 / (totalNegativos + totalPositivos) )));
+		falso.setComentariosPositivos(this.roundTwoDecimals(( max * 100.0 / (totalNegativos + totalPositivos) )));
+		falso.setComentariosNeutros(10);
+		falso.setDescripcion("Este es el margen");
+
+		artistasList.add(falso);
+
+		return artistasList;
+
+		/*
 		double totalPositivos = 0.0;
 		double totalNegativos = 0.0;
 
@@ -56,6 +103,7 @@ public class ArtistaService {
 			artista.setComentariosNegativos( this.roundTwoDecimals((-artista.getComentariosNegativos() * 100.0 / (totalNegativos + totalPositivos) )) );
 		}
 		return artistas;
+		*/
 	}
 	public void updateKeyWords(){
 		Iterable<Artista> artistas = getAllArtists();
