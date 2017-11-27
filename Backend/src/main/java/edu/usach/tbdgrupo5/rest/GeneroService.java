@@ -26,11 +26,20 @@ public class GeneroService {
 	@ResponseBody
 	public Iterable<Genero> getAllUsers()
 	{
+		double totalPositivos = 0.0;
+		double totalNegativos = 0.0;
+
 		Iterable<Genero> generos = generoRepository.findAll();
 
 		for(Genero genero:generos)
 		{
-			genero.setComentariosNegativos(-1*genero.getComentariosNegativos());
+			totalPositivos = totalPositivos + genero.getComentariosPositivos();
+			totalNegativos = totalNegativos + genero.getComentariosNegativos();
+		}
+		for(Genero genero:generos)
+		{
+			genero.setComentariosPositivos( genero.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) );
+			genero.setComentariosNegativos( (-1.0 * genero.getComentariosNegativos()) * 100.0 / (totalNegativos + totalPositivos) );
 		}
 		return generos;
 	}

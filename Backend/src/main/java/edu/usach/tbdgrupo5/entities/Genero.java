@@ -20,9 +20,9 @@ public class Genero implements Serializable {
 	@Id
 	private int idgenero;
 
-	private int comentariosNegativos;
+	private double comentariosNegativos;
 
-	private int comentariosPositivos;
+	private double comentariosPositivos;
 
 	private int comentariosNeutros;
 
@@ -44,19 +44,19 @@ public class Genero implements Serializable {
 		this.idgenero = idgenero;
 	}
 
-	public int getComentariosNegativos() {
+	public double getComentariosNegativos() {
 		return this.comentariosNegativos;
 	}
 
-	public void setComentariosNegativos(int comentariosNegativos) {
+	public void setComentariosNegativos(double comentariosNegativos) {
 		this.comentariosNegativos = comentariosNegativos;
 	}
 
-	public int getComentariosPositivos() {
+	public double getComentariosPositivos() {
 		return this.comentariosPositivos;
 	}
 
-	public void setComentariosPositivos(int comentariosPositivos) {
+	public void setComentariosPositivos(double comentariosPositivos) {
 		this.comentariosPositivos = comentariosPositivos;
 	}
 

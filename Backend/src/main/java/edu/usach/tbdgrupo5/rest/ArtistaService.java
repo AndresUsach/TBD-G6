@@ -40,10 +40,19 @@ public class ArtistaService {
 	@ResponseBody
 	public Iterable<Artista> getAllArtists() {
 
+		double totalPositivos = 0.0;
+		double totalNegativos = 0.0;
+
 		Iterable<Artista> artistas = artistaRepository.findAll();
 		for(Artista artista:artistas)
 		{
-			artista.setComentariosNegativos(-1 * artista.getComentariosNegativos());
+			totalPositivos = totalPositivos + artista.getComentariosPositivos();
+			totalNegativos = totalNegativos + artista.getComentariosNegativos();
+		}
+		for(Artista artista:artistas)
+		{
+			artista.setComentariosPositivos( artista.getComentariosPositivos() * 100.0 / (totalNegativos + totalPositivos) );
+			artista.setComentariosNegativos( (-1.0 * artista.getComentariosNegativos()) * 100.0 / (totalNegativos + totalPositivos) );
 		}
 		return artistas;
 	}

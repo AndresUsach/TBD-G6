@@ -13,9 +13,9 @@ public class Registro implements Serializable
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int idregistro;
 
-    private int comentariosNegativos;
+    private double comentariosNegativos;
 
-    private int comentariosPositivos;
+    private double comentariosPositivos;
 
     private int comentariosNeutros;
 
@@ -31,19 +31,19 @@ public class Registro implements Serializable
         this.idregistro = idregistro;
     }
 
-    public int getComentariosNegativos() {
+    public double getComentariosNegativos() {
         return comentariosNegativos;
     }
 
-    public void setComentariosNegativos(int comentariosNegativos) {
+    public void setComentariosNegativos(double comentariosNegativos) {
         this.comentariosNegativos = comentariosNegativos;
     }
 
-    public int getComentariosPositivos() {
+    public double getComentariosPositivos() {
         return comentariosPositivos;
     }
 
-    public void setComentariosPositivos(int comentariosPositivos) {
+    public void setComentariosPositivos(double comentariosPositivos) {
         this.comentariosPositivos = comentariosPositivos;
     }
 
