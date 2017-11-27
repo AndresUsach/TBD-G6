@@ -13,6 +13,7 @@ import totalGraph from './totalGraph.vue';
 import totalGraph2 from "./totalGraph2.vue";
 import mapa from "./mapaLatino.vue";
 import grafo from "./grafo.vue";
+import login from "./Login.vue";
 import historial from "./historialArtista.vue";
 import administracion from "./administracion.vue";
 import newGenre from "./newGenre.vue";
@@ -32,11 +33,12 @@ const routes = [
   { path: '/mapa', component: mapa},
   { path: '/historial', component: historial},
   { path: '/admin', component: administracion},
+  { path: '/login', compoment: login },
   { path: '/newGenre', component: newGenre}
 ]
 
 // Create the router instance and pass the `routes` option
-const router = new VueRouter({
+export const router = new VueRouter({
   routes
 })
 
