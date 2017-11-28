@@ -1,7 +1,11 @@
 <template>
 
-<div>
-  <div id="chartdiv"></div>
+<div class="w3-container w3-center">
+    <h1> Artistas con sus respectivas valoraciones</h1>
+    <br><br>
+
+  <div  id="chartdiv"></div>
+
 </div>
 
 </template>
@@ -26,6 +30,18 @@
        // error callback
        console.log('error cargando lista');
     });
+
+    this.$http.get('http://localhost:2323/backend-tbd/time/artistas')
+    .then(response=>{
+       // get body data
+      this.tiempo = response.body; 
+     console.log('tiempo',this.tiempo)
+    }, response=>{
+       // error callback
+       console.log('error cargando lista');
+    });
+
+
 
     },
     methods:{
@@ -165,13 +181,13 @@
             "fullWidth": true
           },
           "allLabels": [{
-            "text": "comentarios Negativos",
+            "text": "Comentarios Negativos",
             "x": "28%",
             "y": "97%",
             "bold": true,
             "align": "middle"
           }, {
-            "text": "comentarios Positivos",
+            "text": "Comentarios Positivos",
             "x": "75%",
             "y": "97%",
             "bold": true,

@@ -18,8 +18,10 @@ import historial from "./historialArtista.vue";
 import administracion from "./administracion.vue";
 import newGenre from "./newGenre.vue";
 import Prueba from "./Prueba.vue";
-import prueban from "./prueban.vue";
+import graficoArtista from "./graficoArtista.vue";
+import graficoGenero from "./graficoGenero.vue";
 import SelectMode from './selectAdmin.vue';
+
 
 
 import App from './App.vue';
@@ -39,7 +41,8 @@ const routes = [
   { path: '/admin', component: administracion},
   { path:'/login', component: Login},
   { path: '/newGenre', component: newGenre},
-  { path: '/Prueba', component: prueban},
+  { path: '/grafArtist', component: graficoArtista},
+  { path: '/grafGen', component: graficoGenero},
   { path: '/Select', component: SelectMode}
   
 ]

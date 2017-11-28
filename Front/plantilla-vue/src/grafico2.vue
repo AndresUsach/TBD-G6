@@ -36,6 +36,7 @@ export default{
        // error callback
        console.log('error cargando lista');
     });
+    
     this.$http.get('http://localhost:2323/backend-tbd/time/artistas')
 
     .then(response=>{
