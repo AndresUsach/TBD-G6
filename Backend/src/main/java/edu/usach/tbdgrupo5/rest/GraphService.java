@@ -28,7 +28,7 @@ public class GraphService {
         return this.grafo;
     }
 
-    /*@RequestMapping( value = "/crearGrafo" ,method = RequestMethod.GET)
+    @RequestMapping( value = "/crearGrafo" ,method = RequestMethod.GET)
     @ResponseBody
     public void crearGrafo() throws SQLException {
         neo = new Neo4j();
@@ -37,7 +37,7 @@ public class GraphService {
         neo.crearGrafo();
 
         neo.disconnect();
-    }*/
+    }
 
     @RequestMapping( value = "/ejemplo" ,method = RequestMethod.GET)
     @ResponseBody

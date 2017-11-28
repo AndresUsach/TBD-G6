@@ -43,21 +43,13 @@
   </div>
   <div class="w3-bar-block">
     <a href="#/" id="inicio" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('inicio')"><i class="fa fa-users fa-fw"></i> Inicio</a>
-    <a v-on:click="myAccFunc" href="javascript:void(0)" class="w3-bar-item w3-button w3-padding tablink item" id="myBtnArtist"><i class="fa fa-microphone"></i> 
-          Artistas<i class="fa fa-caret-down w3-right"></i>
-      </a>
-      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="#/login" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Administrar artistas</a>
-        <a href="#/grafArtist" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Opiniones</a>
-      </div>
-    <a v-on:click="myAccFunc2" href="javascript:void(0)" class="w3-bar-item w3-button w3-padding tablink item" id="myBtnGenre"><i class="fa fa-music"></i>
-        Generos <i class="fa fa-caret-down w3-right"></i>
-      </a>
-      <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="#/login" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Nuevo Genero</a>
-        <a href="#/grafGen" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Opiniones</a>
-      </div>
-      
+
+    <a href="#/login" id="admin" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('admin')"><i class="fa fa-address-card-o"></i> Admin</a>
+
+    <a href="#/grafArtist" id="artista" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('artista')"><i class="fa fa-microphone" aria-hidden="true"></i>  Artistas</a>
+
+    <a href="#/grafGen" id="genero" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('genero')"><i class="fa fa-music" aria-hidden="true"></i>  Géneros</a>
+
     <a href="#/mapa" id="Latinoamerica" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Latinoamerica')"><i class="fa fa-bullseye fa-fw"></i> Latinoamerica</a>
 
     <a href="#/graph" id="Grafo2" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Grafo2')"><i class="fa fa-code-fork fa-fw"></i> Grafo relacional</a>

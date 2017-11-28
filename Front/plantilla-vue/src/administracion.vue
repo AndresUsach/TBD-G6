@@ -32,7 +32,11 @@
 
       <p>
 
-      <button id="agregarArtista" class="w3-btn w3-blue-grey" v-on:click= "mostrarMensaje" >Actualizar artistas </button></p>
+      <button id="agregarArtista" class="w3-btn w3-blue-grey" v-on:click= "mostrarMensaje" >Actualizar artista </button></p>
+
+      <p>
+
+      <button id="archivarArtistas" class="w3-btn w3-blue-grey" v-on:click= "archivarTodos" >Archivar todos los artistas </button></p>
 
       <p>
 
@@ -92,6 +96,20 @@
 
                 document.getElementById("generarRegistro").disabled = true;
                   alert(' Se ha reiniciado la captura de comentarios de los artistas.');
+
+                  },response=>{
+
+                    alert('Ha ocurrido un error');
+
+                    console.log("Falla en la conexion con el servidor");
+                  });
+            },
+
+            archivarTodos: function(event){
+              this.$http.post('http://localhost:2323/backend-tbd/registro/archivar/').then(response=>{
+                alert('Todos los artistas han sido archivados');
+
+                console.log("Guardado en el registro el artista eliminado.");
 
                   },response=>{
 

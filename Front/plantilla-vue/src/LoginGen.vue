@@ -2,9 +2,9 @@
     <div class="w3-container  w3-center">    
         <header class="header-blue">Bienvenido a TweetMusic Login</header>
         <h4>Para acceder a nuevas funcionalidades identifiquese </h4>
-        <p>username:
+        <p>Username:
         <input type="text" v-model="username"></p>
-        <p>contraseña:
+        <p>Password:
         <input type="password" name="pwd" v-model="pass"></p>
         <p><button 
             type="submit" 
@@ -40,7 +40,7 @@ export default {
   methods:{
       signUp:function() {
             if (this.authenticate(this.username,this.pass,this.users)) {
-                alert(this.username+",iniciando sesion");
+                alert(this.username+", iniciando sesión...");
                 this.authuser=true;
                 router.push('/newGenre');
             }
@@ -57,7 +57,7 @@ export default {
                     }
                 }
             }
-            alert("nombre de usuario, no registrado");
+            alert("Nombre de usuario no registrado");
             return false;
         }
     }        
