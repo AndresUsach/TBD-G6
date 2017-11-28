@@ -1,5 +1,6 @@
 package edu.usach.tbdgrupo5.rest;
 
+import com.sun.tools.javah.Gen;
 import edu.usach.tbdgrupo5.entities.Artista;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.Math;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.usach.tbdgrupo5.entities.Genero;
 import edu.usach.tbdgrupo5.repository.GeneroRepository;
@@ -112,6 +115,35 @@ public class GeneroService {
 	{
 		DecimalFormat twoDForm = new DecimalFormat("#.##");
 		return Double.valueOf(twoDForm.format(d).replace(',', '.'));
+	}
+
+	@RequestMapping(value = "/total", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> total()
+	{
+		double total = 0;
+		double positivos = 0;
+		double negativos = 0;
+
+		Iterable<Genero> generos = generoRepository.findAll();
+
+		for(Genero genero:generos)
+		{
+			positivos = positivos + genero.getComentariosPositivos();
+			negativos = negativos + genero.getComentariosNegativos();
+		}
+
+		total = positivos + negativos;
+
+		return mapTriple("total", total, "positivos", positivos, "negativos", negativos);
+	}
+
+	private Map<String, Object> mapTriple(String key1, Object value1, String key2, Object value2, String key3, Object value3) {
+		Map<String, Object> result = new HashMap<String, Object>(2);
+		result.put(key1, value1);
+		result.put(key2, value2);
+		result.put(key3, value3);
+		return result;
 	}
 
 

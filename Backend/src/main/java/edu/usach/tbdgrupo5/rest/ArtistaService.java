@@ -3,7 +3,9 @@ package edu.usach.tbdgrupo5.rest;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -166,6 +168,35 @@ public class ArtistaService {
 	{
 		DecimalFormat twoDForm = new DecimalFormat("#.##");
 		return Double.valueOf(twoDForm.format(d).replace(',', '.'));
+	}
+
+	@RequestMapping(value = "/total", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> total()
+	{
+		double total = 0;
+		double positivos = 0;
+		double negativos = 0;
+
+		Iterable<Artista> artistas = artistaRepository.findAll();
+
+		for(Artista artista:artistas)
+		{
+			positivos = positivos + artista.getComentariosPositivos();
+			negativos = negativos + artista.getComentariosNegativos();
+		}
+
+		total = positivos + negativos;
+
+		return mapTriple("total", total, "positivos", positivos, "negativos", negativos);
+	}
+
+	private Map<String, Object> mapTriple(String key1, Object value1, String key2, Object value2, String key3, Object value3) {
+		Map<String, Object> result = new HashMap<String, Object>(2);
+		result.put(key1, value1);
+		result.put(key2, value2);
+		result.put(key3, value3);
+		return result;
 	}
 	 
 }
