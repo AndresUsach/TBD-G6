@@ -8,7 +8,7 @@
       <h2>Nuevo Artista</h2>
     </div>
 
-    <form class="w3-container">
+    <div class="w3-container">
       <p>
       <label class="w3-text-teal"><b>Nombre del artista (Obligatorio):</b></label>
       <input class="w3-input w3-border" type="text" v-model= "nuevoArtista.nombre" style="width: 30%"></p>
@@ -32,12 +32,12 @@
 
       <p>
 
-      <button class="w3-btn w3-blue-grey" v-on:click= "mostrarMensaje" >Actualizar artistas </button></p>
+      <button id="agregarArtista" class="w3-btn w3-blue-grey" v-on:click= "mostrarMensaje" >Actualizar artistas </button></p>
 
       <p>
 
       <button class="w3-btn w3-teal" id="generarRegistro" v-on:click= "cargarArtista" disabled="true" >Reiniciar la captura de opiniones </button></p>
-    </form>
+    </div>
 
     </div>
 
@@ -113,14 +113,14 @@
 
                 for(var i = this.artistas.length -1; i >= 0 ; i--){
                     if(this.artistas[i].nombre == this.selected){
-                        idArtista = this.artistas[i].idartista;
+                        var idArtista = this.artistas[i].idartista;
                         console.log(idArtista);
                     }
                 }
 
                 for(var i = this.generos.length -1; i >= 0 ; i--){
                     if(this.generos[i].nombre == this.selectedGen){
-                        idGenero = this.generos[i].idgenero;
+                        var idGenero = this.generos[i].idgenero;
                         console.log(idGenero);
                     }
                 }
