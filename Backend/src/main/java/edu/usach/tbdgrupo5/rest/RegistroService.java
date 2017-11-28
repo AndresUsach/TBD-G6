@@ -88,4 +88,20 @@ public class RegistroService
         return list;
     }
 
+    /*
+    @RequestMapping( value = "/artistas/}" ,method = RequestMethod.GET)
+    @ResponseBody
+    public List<Artista> getArtistasRegistrados()
+    {
+        List<Artista> list = new ArrayList<Artista>();
+        Iterable<Artista> artistas = artistaRepository.findAll();
+
+        for(Registro registro:registros)
+        {
+            list.add(registro.);
+        }
+        return list;
+    }
+    */
+
 }

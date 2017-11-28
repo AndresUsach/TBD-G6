@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e852331-e1a5-4a93-a715-c519112f6633" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Genero.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/entities/Genero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/ScheduledTasks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/GeneroService.class" afterPath="$PROJECT_DIR$/out/production/classes/edu/usach/tbdgrupo5/rest/GeneroService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/out/production/classes/cl/citiaps/twitter/streaming/TwitterStreaming$1.class" afterPath="$PROJECT_DIR$/../twitter-streaming-master/out/production/classes/cl/citiaps/twitter/streaming/TwitterStreaming$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/out/production/classes/cl/citiaps/twitter/streaming/TwitterStreaming.class" afterPath="$PROJECT_DIR$/../twitter-streaming-master/out/production/classes/cl/citiaps/twitter/streaming/TwitterStreaming.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Genero.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Genero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tbd_final.sql" afterPath="$PROJECT_DIR$/tbd_final.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/words.dat" afterPath="$PROJECT_DIR$/words.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../twitter-streaming-master/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/out/production/resources/words.dat" afterPath="$PROJECT_DIR$/../twitter-streaming-master/out/production/resources/words.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../twitter-streaming-master/src/main/resources/words.dat" afterPath="$PROJECT_DIR$/../twitter-streaming-master/src/main/resources/words.dat" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -29,20 +37,20 @@
       <file leaf-file-name="tbd_final.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tbd_final.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="375">
+              <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneroService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
+      <file leaf-file-name="RegistroService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="26" />
               <folding>
-                <element signature="e#1191#1199#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -443,16 +451,17 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/repository/RegistroArtistasRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroArtistaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/RegistroArtistas.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Artista.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/UsuarioService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/ArtistaService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Genero.java" />
-        <option value="$PROJECT_DIR$/tbd_final.sql" />
         <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java" />
+        <option value="$PROJECT_DIR$/tbd_final.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/words.dat" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java" />
       </list>
     </option>
   </component>
@@ -545,9 +554,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -579,6 +588,12 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/application.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/App.vue</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/administracion.vue</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/graficoArtista.vue</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/graficoGenero.vue</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/historialArtista.vue</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Front/plantilla-vue/src/mapaLatino.vue</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -586,7 +601,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.gitignore</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -810,7 +824,8 @@
       <workItem from="1511462733523" duration="34000" />
       <workItem from="1511584030715" duration="494000" />
       <workItem from="1511663182222" duration="1229000" />
-      <workItem from="1511728451655" duration="11325000" />
+      <workItem from="1511728451655" duration="11656000" />
+      <workItem from="1511843855783" duration="4173000" />
     </task>
     <task id="LOCAL-00001" summary="Jjsakdjksajdsjad">
       <created>1509993938971</created>
@@ -938,11 +953,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511825597411</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="asdasdsadasd">
+      <created>1511828627406</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1511828627406</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41077000" />
+    <option name="totallyTimeSpent" value="45581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -964,8 +986,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24588235" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17882353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28235295" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1039,21 +1061,14 @@
     <MESSAGE value="Cors a usuario agregado" />
     <MESSAGE value="Margen" />
     <MESSAGE value="Total agregado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Total agregado" />
+    <MESSAGE value="asdasdsadasd" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdasdsadasd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/Neo4j.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5175">
@@ -1314,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="87" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,7 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="69" lean-forward="false" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,23 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="126" column="50" lean-forward="false" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1409,35 +1405,8 @@
         <state relative-caret-position="11">
           <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
           <folding>
-            <element signature="e#1594#1603#0" expanded="true" />
+            <element signature="e#1594#1603#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="47" column="76" lean-forward="false" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2711#2721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,8 +1415,8 @@
         <state relative-caret-position="225">
           <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding>
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1508#1509#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="false" />
+            <element signature="e#1508#1509#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1463,20 +1432,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tbd_final.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="1035">
+          <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1191#1199#0" expanded="true" />
+            <element signature="e#4365#4381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/TbdGrupo5Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="42" column="14" lean-forward="true" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/GeneroService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/words.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/ScheduledTasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/entities/Registro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tbd_final.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/usach/tbdgrupo5/rest/RegistroService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <element signature="e#1191#1199#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

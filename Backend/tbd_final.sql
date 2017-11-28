@@ -47,16 +47,16 @@ CREATE TABLE `artista` (
 
 LOCK TABLES `artista` WRITE;
 /*!40000 ALTER TABLE `artista` DISABLE KEYS */;
-INSERT INTO `artista` VALUES (1,'El negrito de ojos claros','Ozuna',1,1,0,0,0);
-INSERT INTO `artista` VALUES (2,'Cantante y Actriz','Becky G',2,1,0,0,0);
-INSERT INTO `artista` VALUES (3,'Cantante y compositor de reggaeton','Maluma',2,1,0,0,0);
-INSERT INTO `artista` VALUES (4,'Cantante','Luis Fonsi',4,1,0,0,0);
-INSERT INTO `artista` VALUES (5,'Cantante y compositor','Danny Ocean',3,1,0,0,0);
-INSERT INTO `artista` VALUES (6,'Cantautor','J Balvin',2,1,0,0,0);
-INSERT INTO `artista` VALUES (7,'Cantautor','Romeo Santos',4,1,0,0,0);
-INSERT INTO `artista` VALUES (8,'Cantante','Shakira',5,1,0,0,0);
-INSERT INTO `artista` VALUES (9,'Rey del reguetón','Daddy Yankee',2,1,0,0,0);
-INSERT INTO `artista` VALUES (10,'La Leyenda Viviente','Yandel',2,1,0,0,0);
+INSERT INTO `artista` VALUES (1,'El negrito de ojos claros','J Balvin',1,1,0,0,0);
+INSERT INTO `artista` VALUES (2,'Cantante y Actriz','Luis Fonsi',2,1,0,0,0);
+INSERT INTO `artista` VALUES (3,'Cantante y compositor de reggaeton','Becky G',1,1,0,0,0);
+INSERT INTO `artista` VALUES (4,'Cantante','Wisin',1,1,0,0,0);
+INSERT INTO `artista` VALUES (5,'Cantante y compositor','Maluma',3,1,0,0,0);
+INSERT INTO `artista` VALUES (6,'Cantautor','Shakira',2,1,0,0,0);
+INSERT INTO `artista` VALUES (7,'Cantautor','Natti Natasha',1,1,0,0,0);
+INSERT INTO `artista` VALUES (8,'Cantante','DJ Luian',1,1,0,0,0);
+INSERT INTO `artista` VALUES (9,'Rey del reguetón','Calibre 50',4,1,0,0,0);
+INSERT INTO `artista` VALUES (10,'La Leyenda Viviente','Jennifer Lopez',5,1,0,0,0);
 
 
 
@@ -71,7 +71,7 @@ DROP TABLE IF EXISTS `genero`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genero` (
-  `idgenero` int(11) NOT NULL,
+  `idgenero` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
   `comentarios_negativos` int(11) DEFAULT '0',
   `comentarios_positivos` int(11) DEFAULT '0',
@@ -86,11 +86,11 @@ CREATE TABLE `genero` (
 
 LOCK TABLES `genero` WRITE;
 /*!40000 ALTER TABLE `genero` DISABLE KEYS */;
-INSERT INTO `genero` VALUES (1,'trap',0,0,0);
-INSERT INTO `genero` VALUES (2,'reggaeton',0,0,0);
-INSERT INTO `genero` VALUES (3,'electropop',0,0,0);
-INSERT INTO `genero` VALUES (4,'bachata',0,0,0);
-INSERT INTO `genero` VALUES (5,'pop latino',0,0,0);
+INSERT INTO `genero` VALUES (1,'Reggaeton',0,0,0);
+INSERT INTO `genero` VALUES (2,'Pop Latino',0,0,0);
+INSERT INTO `genero` VALUES (3,'Trap',0,0,0);
+INSERT INTO `genero` VALUES (4,'Musica Mexicana',0,0,0);
+INSERT INTO `genero` VALUES (5,'R&B',0,0,0);
 
 /*!40000 ALTER TABLE `genero` ENABLE KEYS */;
 UNLOCK TABLES;
