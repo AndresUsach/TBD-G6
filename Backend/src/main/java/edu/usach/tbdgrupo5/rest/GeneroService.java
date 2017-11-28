@@ -1,7 +1,5 @@
 package edu.usach.tbdgrupo5.rest;
 
-import com.sun.tools.javah.Gen;
-import edu.usach.tbdgrupo5.entities.Artista;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.Math;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
