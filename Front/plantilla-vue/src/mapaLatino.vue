@@ -6,7 +6,7 @@
   <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
 </div>
 <div class="pull-left">
-<div id="mapa" class="pull-left" style="position: relative;width: 1050px; height: 700px;margin-left: 100px;"></div>
+<div id="mapa" class="pull-left" style="position: relative;width: 1050px; height: 700px;margin-left: 60px;"></div>
 </div>
 </div>
 </div>
