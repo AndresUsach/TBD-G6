@@ -48,14 +48,14 @@
       </a>
       <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="#/login" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Administrar artistas</a>
-        <a href="#/grafArtist" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Artistas</a>
+        <a href="#/grafArtist" class="w3-bar-item w3-button" v-on:click="openCity('myBtnArtist')"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Opiniones</a>
       </div>
     <a v-on:click="myAccFunc2" href="javascript:void(0)" class="w3-bar-item w3-button w3-padding tablink item" id="myBtnGenre"><i class="fa fa-music"></i>
         Generos <i class="fa fa-caret-down w3-right"></i>
       </a>
       <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="#/login" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-file-text-o" aria-hidden="true"></i>  Nuevo Genero</a>
-        <a href="#/grafGen" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Positivos</a>
+        <a href="#/grafGen" class="w3-bar-item w3-button" v-on:click="openCity('myBtnGenre')"><i class="fa fa-commenting-o" aria-hidden="true"></i>  Opiniones</a>
       </div>
       
     <a href="#/mapa" id="Latinoamerica" class="w3-bar-item w3-button w3-padding tablink item" v-on:click="openCity('Latinoamerica')"><i class="fa fa-bullseye fa-fw"></i> Latinoamerica</a>
