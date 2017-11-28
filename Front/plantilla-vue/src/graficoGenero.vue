@@ -2,9 +2,14 @@
 
 <div class="w3-container w3-center">
     <h1> Géneros musicales con sus respectivas valoraciones</h1>
-    <br><br>
+    <h5> Fecha y hora desde la construcción del gráfico {{ tiempo.time }}</h5>
+    <br>
 
   <div  id="chartdiv"></div>
+  <h5> Total comentarios negativos= {{ todo.negativos }}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Total comentarios positivos= {{ todo.positivos }} </h5> 
+  <h5>Total comentarios emitidos a la fecha= {{todo.total}}</h5>
+
+
 
 </div>
 
@@ -15,7 +20,9 @@
   export default{
     data(){
       return{
-        datos:  []
+        datos:  [],
+        tiempo: [],
+        todo: []
       }
     },
     mounted:function(){
@@ -41,90 +48,26 @@
        console.log('error cargando lista');
     });
 
+    this.$http.get('http://localhost:2323/backend-tbd/generos/total')
+    .then(response=>{
+       // get body data
+      this.todo = response.body; 
+     console.log('tiempo',this.todo)
+    }, response=>{
+       // error callback
+       console.log('error cargando lista');
+    });
 
 
     },
     methods:{
       algo:function(){
-        console.log("aqui vienedssad ", this.datos);
            var chart = AmCharts.makeChart("chartdiv", {
           "type": "serial",
           "theme": "light",
           "rotate": true,
           "marginBottom": 50,
-          "dataProvider": this.datos/*[{
-            "age": "85+",
-            "male": -0.1,
-            "female": 0.3
-          }, {
-            "age": "80-54",
-            "male": -0.2,
-            "female": 0.3
-          }, {
-            "age": "75-79",
-            "male": -0.3,
-            "female": 0.6
-          }, {
-            "age": "70-74",
-            "male": -0.5,
-            "female": 0.8
-          }, {
-            "age": "65-69",
-            "male": -0.8,
-            "female": 1.0
-          }, {
-            "age": "60-64",
-            "male": -1.1,
-            "female": 1.3
-          }, {
-            "age": "55-59",
-            "male": -1.7,
-            "female": 1.9
-          }, {
-            "age": "50-54",
-            "male": -2.2,
-            "female": 2.5
-          }, {
-            "age": "45-49",
-            "male": -2.8,
-            "female": 3.0
-          }, {
-            "age": "40-44",
-            "male": -3.4,
-            "female": 3.6
-          }, {
-            "age": "35-39",
-            "male": -4.2,
-            "female": 4.1
-          }, {
-            "age": "30-34",
-            "male": -5.2,
-            "female": 4.8
-          }, {
-            "age": "25-29",
-            "male": -5.6,
-            "female": 5.1
-          }, {
-            "age": "20-24",
-            "male": -5.1,
-            "female": 5.1
-          }, {
-            "age": "15-19",
-            "male": -3.8,
-            "female": 3.8
-          }, {
-            "age": "10-14",
-            "male": -3.2,
-            "female": 3.4
-          }, {
-            "age": "5-9",
-            "male": -4.4,
-            "female": 4.1
-          }, {
-            "age": "0-4",
-            "male": -5.0,
-            "female": 4.8
-          }]*/,
+          "dataProvider": this.datos,
           "startDuration": 1,
           "graphs": [{
             "fillAlphas": 0.7,
